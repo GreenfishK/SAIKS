@@ -1,0 +1,657 @@
+@prefix : <urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805> .
+
+<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://webprotege.stanford.edu/R9RvfRluqT2SPTS9B82FMSS
+<http://webprotege.stanford.edu/R9RvfRluqT2SPTS9B82FMSS> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                         owl:inverseOf <http://webprotege.stanford.edu/RCxmFQLAQPxNKRJ7pDRFSJM> ;
+                                                         rdf:type owl:TransitiveProperty ;
+                                                         rdfs:domain <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID> ;
+                                                         rdfs:range <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> ;
+                                                         rdfs:label "isTeamOf"@en .
+
+
+###  http://webprotege.stanford.edu/RCxmFQLAQPxNKRJ7pDRFSJM
+<http://webprotege.stanford.edu/RCxmFQLAQPxNKRJ7pDRFSJM> rdf:type owl:ObjectProperty ;
+                                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                                         rdf:type owl:TransitiveProperty ;
+                                                         rdfs:domain <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> ;
+                                                         rdfs:range <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID> ;
+                                                         rdfs:label "hasTeam"@en .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#forGame
+:forGame rdf:type owl:ObjectProperty ;
+         rdfs:domain <http://webprotege.stanford.edu/RCTnEXnYVMGS757Vk8D8j8X> ;
+         rdfs:range <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#forSeason
+:forSeason rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ> ;
+           rdfs:range <http://webprotege.stanford.edu/RDPjDOwslGipHlLDzN5ZDKV> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasAssociate
+:hasAssociate rdf:type owl:ObjectProperty ;
+              rdfs:domain <http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5> ;
+              rdfs:range <http://webprotege.stanford.edu/RDbnn6fGx8nEccJa5hh3YbB> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasAssociation
+:hasAssociation rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ> ;
+                rdfs:range <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasDivision
+:hasDivision rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isDivisionOf ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:domain <http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg> ;
+             rdfs:range <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasGame
+:hasGame rdf:type owl:ObjectProperty ;
+         rdfs:domain <http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY> ;
+         rdfs:range <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasInfrastructure
+:hasInfrastructure rdf:type owl:ObjectProperty ;
+                   rdfs:domain <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> ;
+                   rdfs:range <http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasNation
+:hasNation rdf:type owl:ObjectProperty ;
+           rdfs:range <http://webprotege.stanford.edu/RDCwVahcQuHFihNCAOLCglm> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasParticipant
+:hasParticipant rdf:type owl:ObjectProperty ;
+                rdfs:domain <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> ;
+                rdfs:range <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasRole
+:hasRole rdf:type owl:ObjectProperty ;
+         rdfs:domain <http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5> ;
+         rdfs:range <http://webprotege.stanford.edu/RG7JVZGhCfCoLL1R0hZ1SX> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasRound
+:hasRound rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isRoundOf ;
+          rdfs:domain <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1> ;
+          rdfs:range <http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasSponsor
+:hasSponsor rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID> ;
+            rdfs:range <http://webprotege.stanford.edu/R8TfsCgJwOKgOnV8k60pcrX> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#isDivisionOf
+:isDivisionOf rdf:type owl:ObjectProperty ,
+                       owl:TransitiveProperty ;
+              rdfs:domain <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1> ;
+              rdfs:range <http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#isRoundOf
+:isRoundOf rdf:type owl:ObjectProperty ;
+           rdfs:domain <http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY> ;
+           rdfs:range <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#newContract
+:newContract rdf:type owl:ObjectProperty ;
+             rdfs:domain <http://webprotege.stanford.edu/R8ghfdqdMSV1IxRXIJSvGpc> ;
+             rdfs:range <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ> ;
+             owl:propertyDisjointWith :oldContract .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#offers
+:offers rdf:type owl:ObjectProperty ;
+        rdfs:domain <http://webprotege.stanford.edu/R7y4pCoDX4jslOv0nADpy4h> ;
+        rdfs:range <http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#oldContract
+:oldContract rdf:type owl:ObjectProperty ;
+             rdfs:domain <http://webprotege.stanford.edu/R8ghfdqdMSV1IxRXIJSvGpc> ;
+             rdfs:range <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#on
+:on rdf:type owl:ObjectProperty ;
+    rdfs:domain <http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me> ;
+    rdfs:range <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#places
+:places rdf:type owl:ObjectProperty ;
+        rdfs:domain <http://webprotege.stanford.edu/RDWOTtKOjaDoqn8hxZAg6uq> ;
+        rdfs:range <http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me> .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#takesPlace
+:takesPlace rdf:type owl:ObjectProperty ;
+            rdfs:domain <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> ;
+            rdfs:range <http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasAddress
+:hasAddress rdf:type owl:DatatypeProperty ;
+            rdfs:range xsd:string .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasCapacity
+:hasCapacity rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:int .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasCurrency
+:hasCurrency rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ;
+          rdfs:range xsd:string .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasFoundingDate
+:hasFoundingDate rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:dateTime .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:range xsd:string .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasPassword
+:hasPassword rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasQuote1
+:hasQuote1 rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:double .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasQuote2
+:hasQuote2 rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:double .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasQuoteX
+:hasQuoteX rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:double .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasResult
+:hasResult rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:string .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasTip
+:hasTip rdf:type owl:DatatypeProperty ;
+        rdfs:range xsd:string .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#numberOfFields
+:numberOfFields rdf:type owl:DatatypeProperty ;
+                rdfs:range xsd:int .
+
+
+###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#transferFee
+:transferFee rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:double .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://webprotege.stanford.edu/R5jsYHYkEjGo98p0eFGBKK
+<http://webprotege.stanford.edu/R5jsYHYkEjGo98p0eFGBKK> rdf:type owl:Class ;
+                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasNation ;
+                                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass <http://webprotege.stanford.edu/RDCwVahcQuHFihNCAOLCglm>
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasName ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onDataRange xsd:string
+                                                                        ] ;
+                                                        owl:disjointUnionOf ( <http://webprotege.stanford.edu/RDWOTtKOjaDoqn8hxZAg6uq>
+                                                                              <http://webprotege.stanford.edu/RDbnn6fGx8nEccJa5hh3YbB>
+                                                                            ) ;
+                                                        rdfs:label "Person"@en .
+
+
+###  http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY
+<http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY> rdf:type owl:Class ;
+                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasGame ;
+                                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L>
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :isRoundOf ;
+                                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1>
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasName ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onDataRange xsd:string
+                                                                        ] ;
+                                                        rdfs:label "Round"@en .
+
+
+###  http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5
+<http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5> rdf:type owl:Class ;
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasAssociate ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/RDbnn6fGx8nEccJa5hh3YbB>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasRole ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/RG7JVZGhCfCoLL1R0hZ1SX>
+                                                                         ] ;
+                                                         owl:disjointUnionOf ( <http://webprotege.stanford.edu/RCTnEXnYVMGS757Vk8D8j8X>
+                                                                               <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ>
+                                                                             ) ;
+                                                         rdfs:label "Contract"@en .
+
+
+###  http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38
+<http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38> rdf:type owl:Class ;
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasAddress ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         rdfs:label "Infrastructure"@en .
+
+
+###  http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID
+<http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID> rdf:type owl:Class ;
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasSponsor ;
+                                                                           owl:someValuesFrom <http://webprotege.stanford.edu/R8TfsCgJwOKgOnV8k60pcrX>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <http://webprotege.stanford.edu/R9RvfRluqT2SPTS9B82FMSS> ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasName ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         rdfs:label "Team"@en .
+
+
+###  http://webprotege.stanford.edu/R7uZtzwIyJYGAN8XKeH3d3W
+<http://webprotege.stanford.edu/R7uZtzwIyJYGAN8XKeH3d3W> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38> ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasEmail ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         rdfs:label "Office"@en .
+
+
+###  http://webprotege.stanford.edu/R7y4pCoDX4jslOv0nADpy4h
+<http://webprotege.stanford.edu/R7y4pCoDX4jslOv0nADpy4h> rdf:type owl:Class ;
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :offers ;
+                                                                           owl:someValuesFrom <http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasName ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         rdfs:label "BettingProvider"@en .
+
+
+###  http://webprotege.stanford.edu/R87xJr21RJbDDYMewZ0QzyK
+<http://webprotege.stanford.edu/R87xJr21RJbDDYMewZ0QzyK> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2> ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasName ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         rdfs:label "Stadium"@en .
+
+
+###  http://webprotege.stanford.edu/R8MDKKhCwagPd5BFLeghc47
+<http://webprotege.stanford.edu/R8MDKKhCwagPd5BFLeghc47> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg> ;
+                                                         rdfs:label "SelectionCompetition"@en .
+
+
+###  http://webprotege.stanford.edu/R8TfsCgJwOKgOnV8k60pcrX
+<http://webprotege.stanford.edu/R8TfsCgJwOKgOnV8k60pcrX> rdf:type owl:Class ;
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasName ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         rdfs:label "Sponsor"@en .
+
+
+###  http://webprotege.stanford.edu/R8ghfdqdMSV1IxRXIJSvGpc
+<http://webprotege.stanford.edu/R8ghfdqdMSV1IxRXIJSvGpc> rdf:type owl:Class ;
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :newContract ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :oldContract ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasCurrency ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :transferFee ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:double
+                                                                         ] ;
+                                                         rdfs:label "Transfer"@en .
+
+
+###  http://webprotege.stanford.edu/R8olu6yDK1btdTG7p2FsPOF
+<http://webprotege.stanford.edu/R8olu6yDK1btdTG7p2FsPOF> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg> ;
+                                                         owl:disjointUnionOf ( <http://webprotege.stanford.edu/Re9XF7v7j2gGhXXnNBE69Z>
+                                                                               <http://webprotege.stanford.edu/RecIQcjd3CEbf810RrfUga>
+                                                                             ) ;
+                                                         rdfs:label "ClubCompetition"@en .
+
+
+###  http://webprotege.stanford.edu/R9SwQKNdMa1qHORxX4yjNDz
+<http://webprotege.stanford.edu/R9SwQKNdMa1qHORxX4yjNDz> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> ;
+                                                         rdfs:label "Selection"@en .
+
+
+###  http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me
+<http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me> rdf:type owl:Class ;
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :on ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasQuote1 ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:double
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasQuote2 ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:double
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasQuoteX ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:double
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasTip ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         rdfs:label "Bet"@en .
+
+
+###  http://webprotege.stanford.edu/RBSBs8bYoH0UZJeHzCQRo2
+<http://webprotege.stanford.edu/RBSBs8bYoH0UZJeHzCQRo2> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2> ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :numberOfFields ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onDataRange xsd:int
+                                                                        ] ;
+                                                        rdfs:label "TrainingCenter"@en .
+
+
+###  http://webprotege.stanford.edu/RCTnEXnYVMGS757Vk8D8j8X
+<http://webprotege.stanford.edu/RCTnEXnYVMGS757Vk8D8j8X> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5> ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :forGame ;
+                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L>
+                                                                         ] ;
+                                                         rdfs:label "RefereeContract"@en .
+
+
+###  http://webprotege.stanford.edu/RCh5jqhmXCYHAoKv1IEUGV5
+<http://webprotege.stanford.edu/RCh5jqhmXCYHAoKv1IEUGV5> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasFoundingDate ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:dateTime
+                                                                         ] ;
+                                                         rdfs:label "Club"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK
+<http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> rdf:type owl:Class ;
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasInfrastructure ;
+                                                                           owl:someValuesFrom <http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty <http://webprotege.stanford.edu/RCxmFQLAQPxNKRJ7pDRFSJM> ;
+                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasNation ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/RDCwVahcQuHFihNCAOLCglm>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasFoundingDate ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:dateTime
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasName ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         owl:disjointUnionOf ( <http://webprotege.stanford.edu/R9SwQKNdMa1qHORxX4yjNDz>
+                                                                               <http://webprotege.stanford.edu/RCh5jqhmXCYHAoKv1IEUGV5>
+                                                                             ) ;
+                                                         rdfs:label "Assosiation"@en .
+
+
+###  http://webprotege.stanford.edu/RDCwVahcQuHFihNCAOLCglm
+<http://webprotege.stanford.edu/RDCwVahcQuHFihNCAOLCglm> rdf:type owl:Class ;
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasName ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         rdfs:comment "enum?" ;
+                                                         rdfs:label "Nation"@en .
+
+
+###  http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ
+<http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5> ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :forSeason ;
+                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/RDPjDOwslGipHlLDzN5ZDKV>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasAssociation ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onClass <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK>
+                                                                         ] ;
+                                                         rdfs:label "AssosiationContract"@en .
+
+
+###  http://webprotege.stanford.edu/RDPjDOwslGipHlLDzN5ZDKV
+<http://webprotege.stanford.edu/RDPjDOwslGipHlLDzN5ZDKV> rdf:type owl:Class ;
+                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasName ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         rdfs:label "Season"@en .
+
+
+###  http://webprotege.stanford.edu/RDWOTtKOjaDoqn8hxZAg6uq
+<http://webprotege.stanford.edu/RDWOTtKOjaDoqn8hxZAg6uq> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://webprotege.stanford.edu/R5jsYHYkEjGo98p0eFGBKK> ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :places ;
+                                                                           owl:someValuesFrom <http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me>
+                                                                         ] ,
+                                                                         [ rdf:type owl:Restriction ;
+                                                                           owl:onProperty :hasPassword ;
+                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                           owl:onDataRange xsd:string
+                                                                         ] ;
+                                                         rdfs:label "User"@en .
+
+
+###  http://webprotege.stanford.edu/RDbnn6fGx8nEccJa5hh3YbB
+<http://webprotege.stanford.edu/RDbnn6fGx8nEccJa5hh3YbB> rdf:type owl:Class ;
+                                                         rdfs:subClassOf <http://webprotege.stanford.edu/R5jsYHYkEjGo98p0eFGBKK> ;
+                                                         rdfs:label "FootballAssociate"@en .
+
+
+###  http://webprotege.stanford.edu/RG7JVZGhCfCoLL1R0hZ1SX
+<http://webprotege.stanford.edu/RG7JVZGhCfCoLL1R0hZ1SX> rdf:type owl:Class ;
+                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasName ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onDataRange xsd:string
+                                                                        ] ;
+                                                        rdfs:label "Role"@en .
+
+
+###  http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2
+<http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38> ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasCapacity ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onDataRange xsd:int
+                                                                        ] ;
+                                                        rdfs:label "Playground"@en .
+
+
+###  http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg
+<http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg> rdf:type owl:Class ;
+                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasDivision ;
+                                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1>
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasName ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onDataRange xsd:string
+                                                                        ] ;
+                                                        owl:disjointUnionOf ( <http://webprotege.stanford.edu/R8MDKKhCwagPd5BFLeghc47>
+                                                                              <http://webprotege.stanford.edu/R8olu6yDK1btdTG7p2FsPOF>
+                                                                            ) ;
+                                                        rdfs:label "Competition"@en .
+
+
+###  http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L
+<http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> rdf:type owl:Class ;
+                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasParticipant ;
+                                                                          owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID>
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :takesPlace ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass <http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2>
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasResult ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onDataRange xsd:string
+                                                                        ] ;
+                                                        rdfs:label "Game"@en .
+
+
+###  http://webprotege.stanford.edu/Re9XF7v7j2gGhXXnNBE69Z
+<http://webprotege.stanford.edu/Re9XF7v7j2gGhXXnNBE69Z> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://webprotege.stanford.edu/R8olu6yDK1btdTG7p2FsPOF> ;
+                                                        rdfs:label "DomesticClubCompetitions"^^xsd:string .
+
+
+###  http://webprotege.stanford.edu/RecIQcjd3CEbf810RrfUga
+<http://webprotege.stanford.edu/RecIQcjd3CEbf810RrfUga> rdf:type owl:Class ;
+                                                        rdfs:subClassOf <http://webprotege.stanford.edu/R8olu6yDK1btdTG7p2FsPOF> ;
+                                                        rdfs:label "InternationClubCompetition"@en .
+
+
+###  http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1
+<http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1> rdf:type owl:Class ;
+                                                        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasRound ;
+                                                                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass <http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY>
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :isDivisionOf ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onClass <http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg>
+                                                                        ] ,
+                                                                        [ rdf:type owl:Restriction ;
+                                                                          owl:onProperty :hasName ;
+                                                                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                          owl:onDataRange xsd:string
+                                                                        ] ;
+                                                        rdfs:label "Divison"@en .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi

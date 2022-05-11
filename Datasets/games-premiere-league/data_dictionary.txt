@@ -1,0 +1,113 @@
+link_match		: page link of match in Premier League Official website
+season			: match season
+date			: match date
+home_team		: home team
+away_team		: away team
+result_full		: match result
+result_ht		: match result in 1st time
+home_clearances		: home team clearances in the match
+home_corners		: home team corners in the match
+home_fouls_conceded	: home team fouls conceded in the match
+home_offsides		: home team offsides in the match
+home_passes		: home team passes in the match
+home_possession		: home team possession in the match
+home_red_cards		: home team red cards in the match
+home_shots		: home team shots in the match
+home_shots_on_target	: home team shots on target in the match
+home_tackles		: home team tackles in the match
+home_touches		: home team touches in the match
+home_yellow_cards	: home team yellow cards in the match
+away_clearances		: away tem clearances in the match
+away_corners		: away team corners in the match
+away_fouls_conceded	: away team fouls conceded in the match
+away_offsides		: away team offsides in the match
+away_passes		: away team passes in the match
+away_possession		: away team possession in the match
+away_red_cards		: away team red cards in the match
+away_shots		: away team shots in the match
+away_shots_on_target	: away team shots on target in the match
+away_tackles		: away team tackles in the match
+away_touches		: away team touches in the match
+away_yellow_cards	: away team yellow cards in the match
+goal_home_ft		: home team goals scored in the match
+goal_away_ft		: away team goals scored in the match
+sg_match_ft		: goals difference between home team and away team in the match
+goal_home_ht		: home team goals scored in 1st time in the match
+goal_away_ht		: away team goals scored in 1st time in the match
+sg_match_ht		: goals difference between home team and away team in 1st time in the match
+clearances_avg_H	: average home team clearances in matches as host in the season; accumulated until the last match
+corners_avg_H		: average home team corners in matches as host in the season; accumulated until the last match
+fouls_conceded_avg_H	: average home team fouls conceded in matches as host in the season; accumulated until the last match
+offsides_avg_H		: average home team offsides in matches as host in the season; accumulated until the last match
+passes_avg_H		: average home team passes in matches as host in the season; accumulated until the last match
+possession_avg_H	: average home team possession in matches as host in the season; accumulated until the last match
+red_cards_avg_H		: average home team red cards in matches as host in the season; accumulated until the last match
+shots_avg_H		: average home team shots in matches as host in the season; accumulated until the last match
+shots_on_target_avg_H	: average home team shots on target in matches as host in the season; accumulated until the last match
+tackles_avg_H		: average home team tackles in matches as host in the season; accumulated until the last match
+touches_avg_H		: average home team touches in matches as host in the season; accumulated until the last match
+yellow_cards_avg_H	: average home team yellow cards in matches as host in the season; accumulated until the last match
+goals_scored_ft_avg_H	: average home team goals scored in matches as host in the season; accumulated until the last match
+goals_conced_ft_avg_H	: average home team goals conceded in matches as host in the season; accumulated until the last match
+sg_match_ft_acum_H	: goals difference in matches as host in the season; accumulated until the last match
+goals_scored_ht_avg_H	: average home team goals scored in 1st time in matches as host in the season; accumulated until the last match
+goals_conced_ht_avg_H	: average home team goals conceded in 1st time in matches as host in the season; accumulated until the last match
+sg_match_ht_acum_H	: goals difference in 1st time in matches as host in the season; accumulated until the last match
+performance_acum_H	: home team percentage of points gains in matches as host in the season; accumulated until the last match
+clearances_avg_A	: average away team clearances in matches as host in the season; accumulated until the last match
+corners_avg_A		: average away team corners in matches as host in the season; accumulated until the last match
+fouls_conceded_avg_A	: average away team fouls conceded in matches as host in the season; accumulated until the last match
+offsides_avg_A		: average away team offsides in matches as host in the season; accumulated until the last match
+passes_avg_A		: average away team passes in matches as host in the season; accumulated until the last match
+possession_avg_A	: average away team possession in matches as host in the season; accumulated until the last match
+red_cards_avg_A		: average away team red cards in matches as host in the season; accumulated until the last match
+shots_avg_A		: average away team shots in matches as host in the season; accumulated until the last match
+shots_on_target_avg_A	: average away team shots on target in matches as host in the season; accumulated until the last match
+tackles_avg_A		: average away team tackles in matches as host in the season; accumulated until the last match
+touches_avg_A		: average away team touches in matches as host in the season; accumulated until the last match
+yellow_cards_avg_A	: average away team yellow cards in matches as host in the season; accumulated until the last match
+goals_scored_ft_avg_A	: average away team goals scored in matches as host in the season; accumulated until the last match
+goals_conced_ft_avg_A	: average away team goals conceded in matches as host in the season; accumulated until the last match
+sg_match_ft_acum_A	: goals difference in matches as host in the season; accumulated until the last match
+goals_scored_ht_avg_A	: average away team goals scored in 1st time in matches as host in the season; accumulated until the last match
+goals_conced_ht_avg_A	: average away team goals conceded in 1st time in matches as host in the season; accumulated until the last match
+sg_match_ht_acum_A	: goals difference in 1st time in matches as host in the season; accumulated until the last match
+performance_acum_A	: away team percentage of points gains in matches as host in the season; accumulated until the last match
+clearances_avg_home	: average home team clearances in the season; accumulated until the last match
+corners_avg_home	: average home team corners in the season; accumulated until the last match
+fouls_conceded_avg_home	: average home team fouls conceded in the season; accumulated until the last match
+offsides_avg_home	: average home team offsides in the season; accumulated until the last match
+passes_avg_home		: average home team passes in the season; accumulated until the last match
+possession_avg_home	: average home team possession in the season; accumulated until the last match
+red_cards_avg_home	: average home team red cards in the season; accumulated until the last match
+shots_avg_home		: average home team shots in the season; accumulated until the last match
+shots_on_target_avg_home: average home team shots on target in the season; accumulated until the last match
+tackles_avg_home	: average home team tackles in the season; accumulated until the last match
+touches_avg_home	: average home team touches in the season; accumulated until the last match
+yellow_cards_avg_home	: average home team yellow cards in the season; accumulated until the last match
+goals_scored_ft_avg_home: average home team goals scored in the season; accumulated until the last match
+goals_conced_ft_avg_home: average home team goals conceded in the season; accumulated until the last match
+sg_match_ft_acum_home	: goals difference in the season; accumulated until the last match
+goals_scored_ht_avg_home: average home team goals scored in 1st time in the season; accumulated until the last match
+goals_conced_ht_avg_home: average home team goals conceded in 1st time in the season; accumulated until the last match
+sg_match_ht_acum_home	: goals difference in 1st time in the season; accumulated until the last match
+performance_acum_home	: home team percentage of points gains in the season; accumulated until the last match
+clearances_avg_away	: average away team clearances in the season; accumulated until the last match
+corners_avg_away	: average away team corners in the season; accumulated until the last match
+fouls_conceded_avg_away	: average away team fouls conceded in the season; accumulated until the last match
+offsides_avg_away	: average away team offsides in the season; accumulated until the last match
+passes_avg_away		: average away team passes in the season; accumulated until the last match
+possession_avg_away	: average away team possession in the season; accumulated until the last match
+red_cards_avg_away	: average away team red cards in the season; accumulated until the last match
+shots_avg_away		: average away team shots in the season; accumulated until the last match
+shots_on_target_avg_away: average away team shots on target in the season; accumulated until the last match
+tackles_avg_away	: average away team tackles in the season; accumulated until the last match
+touches_avg_away	: average away team touches in the season; accumulated until the last match
+yellow_cards_avg_away	: average away team yellow cards in the season; accumulated until the last match
+goals_scored_ft_avg_away: average away team goals scored in the season; accumulated until the last match
+goals_conced_ft_avg_away: average away team goals conceded in the season; accumulated until the last match
+sg_match_ft_acum_away	: goals difference in the season; accumulated until the last match
+goals_scored_ht_avg_away: average away team goals scored in 1st time in the season; accumulated until the last match
+goals_conced_ht_avg_away: average away team goals conceded in 1st time in the season; accumulated until the last match
+sg_match_ht_acum_away	: goals difference in 1st time in the season; accumulated until the last match
+performance_acum_away	: away team percentage of points gains in the season; accumulated until the last match

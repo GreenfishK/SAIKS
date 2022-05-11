@@ -1,0 +1,5 @@
+betting-odds:
+- https://www.football-data.co.uk/englandm.php --> Season 2020/2021 --> Premiere League
+- or: https://www.football-data.co.uk/mmz4281/2021/E0.csv 
+transfers: https://github.com/ewenme/transfers/tree/master/data
+games-premiere-league: https://www.kaggle.com/datasets/pablohfreitas/all-premier-league-matches-20102021?select=df_full_premierleague.csv
