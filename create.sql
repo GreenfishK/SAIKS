@@ -78,6 +78,7 @@ create table plattformUser (
 create table bet (
     id_bet smallint primary key, --auto incr
     id_match smallint not null references match(id_match),
+    bet_offered timestamp not null, -- E0.Date, E0.Time
     home_win_odds decimal not null, --E0.B365H		
     draw_odds decimal not null, --E0.B365D
     away_win_odds decimal not null, --E0.B365A
