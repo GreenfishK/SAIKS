@@ -1,4 +1,4 @@
-########################################################
+    ########################################################
 # creates postgres sql database image and pgadmin4 image
 # login db: postgres:postgres hostname: postgres
 # login pgadmin: admin@developer-blog.net:admin port 5555
@@ -10,16 +10,19 @@
 ########################################################
 version: '3'
 services:
+  #create_db:
+  #  build:
+  #    context: ./
+  #    dockerfile: Dockerfile
+    
   postgres:
-    #image: postgres:14.2
+    image: postgres:14.2
     build:
       context: ./
-      dockerfile: Dockerfile   
-
+      dockerfile: Dockerfile
     hostname: saiks
-# if you need to connect from outside, comment this in:
-#   ports:
-#     - 5432:5432
+    ports:
+     - 5432:5432
     environment:
       POSTGRES_USER: saiks2022
       POSTGRES_PASSWORD: saiks2022
@@ -28,16 +31,27 @@ services:
       - postgres-data:/var/lib/postgresql/data
     restart: unless-stopped
 
-  pgadmin:
-    image: dpage/pgadmin4
-    depends_on:
+  load_data:
+    build: 
+      context: scripts/
+      dockerfile: Dockerfile
+    depends_on: 
       - postgres
-    ports:
-      - 5555:80
-    environment:
-      PGADMIN_DEFAULT_EMAIL: admin@developer-blog.net
-      PGADMIN_DEFAULT_PASSWORD: admin
-    restart: unless-stopped
+    volumes:
+      - ./Datasets:/home/saiks/Datasets
+    restart: on-failure
+    entrypoint: ["python3", "/home/saiks/scripts/import_data.py"]
+  #pgadmin:
+  #  image: dpage/pgadmin4
+  #  depends_on:
+  #    - postgres
+  #  ports:
+  #    - 5555:80
+  #  environment:
+  #    PGADMIN_DEFAULT_EMAIL: admin@developer-blog.net
+  #    PGADMIN_DEFAULT_PASSWORD: admin
+  #  restart: unless-stopped
 
 volumes:
   postgres-data:
+  Datasets:
