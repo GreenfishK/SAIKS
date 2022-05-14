@@ -39,18 +39,20 @@ services:
       - postgres
     volumes:
       - ./Datasets:/home/saiks/Datasets
+      - ./scripts/import_data.py:/home/saiks/scripts/import_data.py
     restart: on-failure
     entrypoint: ["python3", "/home/saiks/scripts/import_data.py"]
-  #pgadmin:
-  #  image: dpage/pgadmin4
-  #  depends_on:
-  #    - postgres
-  #  ports:
-  #    - 5555:80
-  #  environment:
-  #    PGADMIN_DEFAULT_EMAIL: admin@developer-blog.net
-  #    PGADMIN_DEFAULT_PASSWORD: admin
-  #  restart: unless-stopped
+
+  pgadmin:
+    image: dpage/pgadmin4
+    depends_on:
+      - postgres
+    ports:
+      - 5555:80
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@developer-blog.net
+      PGADMIN_DEFAULT_PASSWORD: admin
+    restart: unless-stopped
 
 volumes:
   postgres-data:

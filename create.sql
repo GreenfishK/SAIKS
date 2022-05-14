@@ -18,7 +18,7 @@ create table team (
 
 create table player (
 	id_player smallint primary key, --auro incr
-	name varchar(15), --player_name
+	name varchar(50), --player_name
 	kit smallint, --not null check(kit between 1 and 99), --missing
 	country varchar(32) -- not null --missing
 ); 
@@ -28,7 +28,7 @@ create table contract (
 	id_team smallint not null references team(id_team),
     transfer_period varchar(15) not null check (transfer_period = 'Summer' or transfer_period = 'Winter'), --english_premiere_league.transfer_period
     season varchar(15) not null, --english_premiere_league.season
-	position varchar(10) not null check(position='Centre-Forward' --english_premiere_league.position
+	position varchar(30) not null check(position='Centre-Forward' --english_premiere_league.position
                                         OR position='Goalkeeper'
                                         OR position='Central Midfield'
                                         OR position='Defensive Midfield'

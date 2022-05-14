@@ -46,11 +46,59 @@ df_games_premiere_league.columns = [c.lower() for c in df_games_premiere_league.
 df_transfers.columns = [c.lower() for c in df_transfers.columns]
 
 # Create dfs in the structure of the football db schema tables
+engine = create_engine('postgresql://saiks2022:saiks2022@saiks:5432/football')
+engine.execute("Truncate contract, user_bet, bet, result, match, score, plattformUser, player, team, stadium;")
+
+# df_stadium = pd.DataFrame(columns=['id_stadium', 'full_name', 'capacity'])
+
 df_team = pd.DataFrame(columns=['id_team', 'id_stadium', 'club', 'shorthand'])
 df_team['id_team'] = np.arange(0, len(df2))
 df_team['id_stadium'] = np.nan
 df_team['club'] = df2.values
 df_team['shorthand'] = np.nan
-
-engine = create_engine('postgresql://saiks2022:saiks2022@saiks:5432/football')
+print("Insert into table team")
 df_team.to_sql("team", engine, if_exists="append", index=False)
+
+df_player = pd.DataFrame(columns=['id_player', 'name', 'kit', 'country'])
+df_player['name'] = df_transfers['player_name']
+df_player['id_player'] = np.arange(0, len(df_player))
+df_player['kit'] = np.nan
+df_player['country'] = np.nan
+print("Insert into table player")
+df_player.to_sql("player", engine, if_exists="append", index=False)
+
+df_contract = df_transfers.merge(df_player, left_on='player_name',
+                                 right_on="name").merge(df_team, left_on="club_name", right_on="club")
+df_contract = df_contract[df_contract.transfer_movement == 'in']
+df_contract = df_contract[['id_player', 'id_team', 'transfer_period', 'season', 'position', 'year']]
+print("Insert into table contract")
+df_contract.to_sql("contract", engine, if_exists="append", index=False)
+
+
+df_match = pd.DataFrame(columns=['id_match', 'id_home', 'id_away', 'id_stadium', 'date_time', 'attendance'])
+
+
+
+
+df_result = pd.DataFrame(columns=['id_match', 'home', 'away'])
+
+
+
+
+
+df_score = pd.DataFrame(columns=['id_score', 'id_match', 'id_team', 'id_player', 'goals'])
+
+
+
+df_plattformuser = pd.DataFrame(columns=['id_user', 'name'])
+
+
+
+
+df_bet = pd.DataFrame(columns=['id_bet', 'id_match', 'bet_offered', 'home_win_odds', 'draw_odds',
+                               'away_win_odds', 'betting_provider'])
+
+
+
+
+df_user_bet = pd.DataFrame(columns=['id_user', 'id_bet', 'tip', 'tip_timestamp'])
