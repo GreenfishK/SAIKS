@@ -95,11 +95,11 @@ df_result.to_sql('result', engine, if_exists="append", index=False)
 
 # df_score = pd.DataFrame(columns=['id_score', 'id_match', 'id_team', 'goals'])
 
-df_plattformuser = pd.DataFrame(columns=['id_user', 'name'])
-df_plattformuser['id_user'] = ['000000', '000001', '000002']
-df_plattformuser['name'] = ['Nino', 'Bogdan', 'Filip']
+df_platformuser = pd.DataFrame(columns=['id_user', 'name'])
+df_platformuser['id_user'] = ['000000', '000001', '000002']
+df_platformuser['name'] = ['Nino', 'Bogdan', 'Filip']
 print("Insert into table platformUser")
-df_plattformuser.to_sql('platformUser', engine, if_exists="append", index=False)
+df_platformuser.to_sql('platformUser', engine, if_exists="append", index=False)
 
 df_betting_odds['date'] = pd.to_datetime(df_betting_odds['date'])
 df_match['date_time'] = pd.to_datetime(df_match['date_time'])
