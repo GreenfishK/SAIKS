@@ -50,9 +50,9 @@ create table match (
 	id_match smallint primary key, --auto incr
 	id_home smallint not null references team(id_team), --df_full_premierleague.home_team
 	id_away smallint not null references team(id_team), --df_full_premierleague.away_team
-	id_stadium smallint not null references stadium(id_stadium), --missing 
+	id_stadium smallint references stadium(id_stadium), --missing 
 	date_time timestamp not null, --df_full_premierleague.date
-	attendance integer not null --missing
+	attendance integer --missing
 );
 
 create table result (
@@ -61,16 +61,16 @@ create table result (
 	away smallint not null check(away >= 0) --EO.FTAG
 );
 
-create table score (
+/*create table score (
 	id_score smallint primary key, --auto incr
 	id_match smallint not null references match(id_match),
 	id_team smallint not null references team(id_team),
 	id_player smallint not null references player(id_player),
 	goals smallint not null check(goals >= 0) --df_full_premierleague.goal_home_ft + df_full_premierleague.goal_away_ft
-	--assists smallint not null check(assists >= 0) --missing
-);
+	assists smallint not null check(assists >= 0) --missing
+);*/
 
-create table plattformUser (
+create table platformUser (
     id_user smallint primary key, --auto incr
     name varchar(50) not null -- synthetic
 );
@@ -86,7 +86,7 @@ create table bet (
 );
 
 create table user_bet (
-    id_user smallint not null references plattformUser(id_user),
+    id_user smallint not null references platformUser(id_user),
     id_bet smallint not null references bet(id_bet),
     tip varchar(1) not null check(tip='H' OR tip='D' OR tip ='A'), --synthetic
     tip_timestamp timestamp not null, --synthetic

@@ -1,3 +1,5 @@
+from datetime import timedelta
+
 import numpy as np
 import pandas as pd
 import sqlalchemy
@@ -45,9 +47,12 @@ df_betting_odds.columns = [c.lower() for c in df_betting_odds.columns]
 df_games_premiere_league.columns = [c.lower() for c in df_games_premiere_league.columns]
 df_transfers.columns = [c.lower() for c in df_transfers.columns]
 
-# Create dfs in the structure of the football db schema tables
+################################################################
+# Create dfs in the structure of the football db schema tables #
+################################################################
+
 engine = create_engine('postgresql://saiks2022:saiks2022@saiks:5432/football')
-engine.execute("Truncate contract, user_bet, bet, result, match, score, plattformUser, player, team, stadium;")
+engine.execute("Truncate contract, user_bet, bet, result, match, platformUser, player, team, stadium;")
 
 # df_stadium = pd.DataFrame(columns=['id_stadium', 'full_name', 'capacity'])
 
@@ -74,31 +79,40 @@ df_contract = df_contract[['id_player', 'id_team', 'transfer_period', 'season', 
 print("Insert into table contract")
 df_contract.to_sql("contract", engine, if_exists="append", index=False)
 
+df_match = df_games_premiere_league.merge(df_team, left_on="home_team", right_on="club")\
+    .merge(df_team[['id_team', 'club']], left_on="away_team", right_on="club")
+df_match.rename(columns={'id_team_x': 'id_home', 'id_team_y': 'id_away', 'date': 'date_time'}, inplace=True)
+df_match['id_match'] = np.arange(0, len(df_match))
+df_match['attendance'] = np.nan
+print("Insert into table match")
+df_match[['id_match', 'id_home', 'id_away', 'id_stadium', 'date_time', 'attendance']]\
+    .to_sql("match", engine, if_exists="append", index=False)
 
-df_match = pd.DataFrame(columns=['id_match', 'id_home', 'id_away', 'id_stadium', 'date_time', 'attendance'])
+df_result = df_match[['id_match', 'goal_home_ft', 'goal_away_ft']].copy()
+df_result.rename(columns={'goal_home_ft': 'home', 'goal_away_ft': 'away'}, inplace=True)
+print("Insert into table result")
+df_result.to_sql('result', engine, if_exists="append", index=False)
 
-
-
-
-df_result = pd.DataFrame(columns=['id_match', 'home', 'away'])
-
-
-
-
-
-df_score = pd.DataFrame(columns=['id_score', 'id_match', 'id_team', 'id_player', 'goals'])
-
-
+# df_score = pd.DataFrame(columns=['id_score', 'id_match', 'id_team', 'goals'])
 
 df_plattformuser = pd.DataFrame(columns=['id_user', 'name'])
+df_plattformuser['id_user'] = ['000000', '000001', '000002']
+df_plattformuser['name'] = ['Nino', 'Bogdan', 'Filip']
+print("Insert into table platformUser")
+df_plattformuser.to_sql('platformUser', engine, if_exists="append", index=False)
 
-
-
-
-df_bet = pd.DataFrame(columns=['id_bet', 'id_match', 'bet_offered', 'home_win_odds', 'draw_odds',
-                               'away_win_odds', 'betting_provider'])
-
-
-
+df_betting_odds['date'] = pd.to_datetime(df_betting_odds['date'])
+df_match['date_time'] = pd.to_datetime(df_match['date_time'])
+df_bet = df_match.merge(df_betting_odds, left_on=['date_time', 'home_team', 'away_team'],
+                        right_on=['date', 'hometeam', 'awayteam'])
+df_bet['id_bet'] = np.arange(0, len(df_bet))
+df_bet.rename(columns={'b365h': 'home_win_odds', 'b365d': 'draw_odds', 'b365a': 'away_win_odds',
+                       'date_time': 'bet_offered'}, inplace=True)
+df_bet['betting_provider'] = 'b365'
+df_bet['bet_offered'] = df_bet['date'] - timedelta(hours=32)
+df_bet = df_bet[['id_bet', 'id_match', 'bet_offered', 'home_win_odds', 'draw_odds',
+                 'away_win_odds', 'betting_provider']]
+print("Insert into table bet")
+df_bet.to_sql('bet', engine, if_exists="append", index=False)
 
 df_user_bet = pd.DataFrame(columns=['id_user', 'id_bet', 'tip', 'tip_timestamp'])
