@@ -2,7 +2,7 @@
 A repository for the SAIKS lecture at the Vienna University of Technology. It contains the assignment data for the football ontology by group 11.
 
 # Reproduce experiment
-* Download Ontop plugin from [here](https://sourceforge.net/projects/ontop4obda/) or take the one from {SAIKS}/Protege/jdbc_driver/postgresql-42.3.5.jar and copy it into your local protege/plugins folder. E.g. on linux: /opt/Protege/Protege-5.5.0/plugins
+* Download Ontop plugin from [here](https://sourceforge.net/projects/ontop4obda/) or take the one from {SAIKS}/Protege/plugins/it.unibz.inf.ontop.protege-4.2.1.jar and copy it into your local protege/plugins folder. E.g. on linux: /opt/Protege/Protege-5.5.0/plugins
 * Go into the root folder of this project and run: ```docker-compose up```. This will start a postgres database, create a database schema from the create.sql script and load data from the ./Datasets directory into the newly created schema. It will also start a web interface service for browsing the postgres database. This is only needed if you want to explore the database with a handy web tool (see Details below)
 Now you are able to execute R2RML mappings and thereby transform relational data from the postgres databse to triples. To do this, start your local copy of Protege and execute following steps:
     * Load JDBC driver: Start Protege 5.5 and go to File > Preferences > JDBC Drivers > Add
