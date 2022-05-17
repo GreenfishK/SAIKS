@@ -1,0 +1,111 @@
+<http://www.semanticweb.org/saiks2022/football/team/0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/23> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/28> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/30> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/32> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/33> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/34> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/35> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/36> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Assosiation> .
+<http://www.semanticweb.org/saiks2022/football/team/0> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Blackpool" .
+<http://www.semanticweb.org/saiks2022/football/team/1> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Liverpool" .
+<http://www.semanticweb.org/saiks2022/football/team/2> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Manchester United" .
+<http://www.semanticweb.org/saiks2022/football/team/3> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Stoke City" .
+<http://www.semanticweb.org/saiks2022/football/team/4> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Fulham" .
+<http://www.semanticweb.org/saiks2022/football/team/5> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Blackburn Rovers" .
+<http://www.semanticweb.org/saiks2022/football/team/6> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Manchester City" .
+<http://www.semanticweb.org/saiks2022/football/team/7> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Sunderland" .
+<http://www.semanticweb.org/saiks2022/football/team/8> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Bolton Wanderers" .
+<http://www.semanticweb.org/saiks2022/football/team/9> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Arsenal" .
+<http://www.semanticweb.org/saiks2022/football/team/10> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Birmingham City" .
+<http://www.semanticweb.org/saiks2022/football/team/11> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Tottenham Hotspur" .
+<http://www.semanticweb.org/saiks2022/football/team/12> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "West Bromwich Albion" .
+<http://www.semanticweb.org/saiks2022/football/team/13> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "West Ham United" .
+<http://www.semanticweb.org/saiks2022/football/team/14> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Aston Villa" .
+<http://www.semanticweb.org/saiks2022/football/team/15> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Everton" .
+<http://www.semanticweb.org/saiks2022/football/team/16> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Newcastle United" .
+<http://www.semanticweb.org/saiks2022/football/team/17> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Wigan Athletic" .
+<http://www.semanticweb.org/saiks2022/football/team/18> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Wolverhampton Wanderers" .
+<http://www.semanticweb.org/saiks2022/football/team/19> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Chelsea" .
+<http://www.semanticweb.org/saiks2022/football/team/20> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Swansea City" .
+<http://www.semanticweb.org/saiks2022/football/team/21> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Queens Park Rangers" .
+<http://www.semanticweb.org/saiks2022/football/team/22> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Norwich City" .
+<http://www.semanticweb.org/saiks2022/football/team/23> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Reading" .
+<http://www.semanticweb.org/saiks2022/football/team/24> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Southampton" .
+<http://www.semanticweb.org/saiks2022/football/team/25> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Crystal Palace" .
+<http://www.semanticweb.org/saiks2022/football/team/26> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Cardiff City" .
+<http://www.semanticweb.org/saiks2022/football/team/27> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Hull City" .
+<http://www.semanticweb.org/saiks2022/football/team/28> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Burnley" .
+<http://www.semanticweb.org/saiks2022/football/team/29> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Leicester City" .
+<http://www.semanticweb.org/saiks2022/football/team/30> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Watford" .
+<http://www.semanticweb.org/saiks2022/football/team/31> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "AFC Bournemouth" .
+<http://www.semanticweb.org/saiks2022/football/team/32> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Middlesbrough" .
+<http://www.semanticweb.org/saiks2022/football/team/33> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Brighton and Hove Albion" .
+<http://www.semanticweb.org/saiks2022/football/team/34> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Huddersfield Town" .
+<http://www.semanticweb.org/saiks2022/football/team/35> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Sheffield United" .
+<http://www.semanticweb.org/saiks2022/football/team/36> <http://www.semanticweb.org/saiks2022/football/ontology#hasName> "Leeds United" .
+<http://www.semanticweb.org/saiks2022/football/team/0> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/2> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/3> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/4> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/5> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/6> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/7> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/8> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/9> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/10> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/11> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/12> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/13> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/14> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/15> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/16> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/17> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/18> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/19> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/20> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/21> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/22> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/23> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/24> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/25> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/26> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/27> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/28> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/29> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/30> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/31> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/32> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/33> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/34> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/35> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
+<http://www.semanticweb.org/saiks2022/football/team/36> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.semanticweb.org/saiks2022/football/ontology#Club> .
