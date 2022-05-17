@@ -1,238 +1,237 @@
-@prefix : <urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805> .
+@prefix : <http://www.semanticweb.org/saiks2022/football/ontology#> .
 @prefix ex: <http://example.org/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix data: <urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805> .
+@base <http://www.semanticweb.org/saiks2022/football/ontology> .
 
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805> rdf:type owl:Ontology .
+<http://www.semanticweb.org/saiks2022/football/ontology> rdf:type owl:Ontology .
 
 #################################################################
 #    Object Properties
 #################################################################
 
-###  http://webprotege.stanford.edu/R9RvfRluqT2SPTS9B82FMSS
-<http://webprotege.stanford.edu/R9RvfRluqT2SPTS9B82FMSS> rdf:type owl:ObjectProperty ;
+
+:isTeamOf rdf:type owl:ObjectProperty ;
                                                          rdfs:subPropertyOf owl:topObjectProperty ;
-                                                         owl:inverseOf <http://webprotege.stanford.edu/RCxmFQLAQPxNKRJ7pDRFSJM> ;
+                                                         owl:inverseOf :hasTeam ;
                                                          rdf:type owl:TransitiveProperty ;
-                                                         rdfs:domain <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID> ;
-                                                         rdfs:range <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> ;
+                                                         rdfs:domain :Team ;
+                                                         rdfs:range :Assosiation ;
                                                          rdfs:label "isTeamOf"@en .
 
 
-###  http://webprotege.stanford.edu/RCxmFQLAQPxNKRJ7pDRFSJM
-<http://webprotege.stanford.edu/RCxmFQLAQPxNKRJ7pDRFSJM> rdf:type owl:ObjectProperty ;
+
+:hasTeam rdf:type owl:ObjectProperty ;
                                                          rdfs:subPropertyOf owl:topObjectProperty ;
                                                          rdf:type owl:TransitiveProperty ;
-                                                         rdfs:domain <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> ;
-                                                         rdfs:range <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID> ;
+                                                         rdfs:domain :Assosiation ;
+                                                         rdfs:range :Team ;
                                                          rdfs:label "hasTeam"@en .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#forGame
+
 :forGame rdf:type owl:ObjectProperty ;
-         rdfs:domain <http://webprotege.stanford.edu/RCTnEXnYVMGS757Vk8D8j8X> ;
-         rdfs:range <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> .
+         rdfs:domain :RefereeContract ;
+         rdfs:range :Game .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#forSeason
+
 :forSeason rdf:type owl:ObjectProperty ;
-           rdfs:domain <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ> ;
-           rdfs:range <http://webprotege.stanford.edu/RDPjDOwslGipHlLDzN5ZDKV> .
+           rdfs:domain :AssosiationContract ;
+           rdfs:range :Season .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasAssociate
+
 :hasAssociate rdf:type owl:ObjectProperty ;
-              rdfs:domain <http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5> ;
-              rdfs:range <http://webprotege.stanford.edu/RDbnn6fGx8nEccJa5hh3YbB> .
+              rdfs:domain :Contract ;
+              rdfs:range :FootballAssociate .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasAssociation
+
 :hasAssociation rdf:type owl:ObjectProperty ;
-                rdfs:domain <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ> ;
-                rdfs:range <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> .
+                rdfs:domain :AssosiationContract ;
+                rdfs:range :Assosiation .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasDivision
+
 :hasDivision rdf:type owl:ObjectProperty ;
              owl:inverseOf :isDivisionOf ;
              rdf:type owl:TransitiveProperty ;
-             rdfs:domain <http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg> ;
-             rdfs:range <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1> .
+             rdfs:domain :Competition ;
+             rdfs:range :Division .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasGame
+
 :hasGame rdf:type owl:ObjectProperty ;
-         rdfs:domain <http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY> ;
-         rdfs:range <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> .
+         rdfs:domain :Round ;
+         rdfs:range :Game .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasInfrastructure
+
 :hasInfrastructure rdf:type owl:ObjectProperty ;
-                   rdfs:domain <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> ;
-                   rdfs:range <http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38> .
+                   rdfs:domain :Assosiation ;
+                   rdfs:range :Infrastructure .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasNation
+
 :hasNation rdf:type owl:ObjectProperty ;
-           rdfs:range <http://webprotege.stanford.edu/RDCwVahcQuHFihNCAOLCglm> .
+           rdfs:range :Nation .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasParticipant
+
 :hasParticipant rdf:type owl:ObjectProperty ;
-                rdfs:domain <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> ;
-                rdfs:range <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID> .
+                rdfs:domain :Game ;
+                rdfs:range :Team .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasRole
+
 :hasRole rdf:type owl:ObjectProperty ;
-         rdfs:domain <http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5> ;
-         rdfs:range <http://webprotege.stanford.edu/RG7JVZGhCfCoLL1R0hZ1SX> .
+         rdfs:domain :Contract ;
+         rdfs:range :Role .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasRound
+
 :hasRound rdf:type owl:ObjectProperty ;
           owl:inverseOf :isRoundOf ;
-          rdfs:domain <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1> ;
-          rdfs:range <http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY> .
+          rdfs:domain :Division ;
+          rdfs:range :Round .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasSponsor
+
 :hasSponsor rdf:type owl:ObjectProperty ;
-            rdfs:domain <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID> ;
-            rdfs:range <http://webprotege.stanford.edu/R8TfsCgJwOKgOnV8k60pcrX> .
+            rdfs:domain :Team ;
+            rdfs:range :Sponsor .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#isDivisionOf
+
 :isDivisionOf rdf:type owl:ObjectProperty ,
                        owl:TransitiveProperty ;
-              rdfs:domain <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1> ;
-              rdfs:range <http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg> .
+              rdfs:domain :Division ;
+              rdfs:range :Competition .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#isRoundOf
+
 :isRoundOf rdf:type owl:ObjectProperty ;
-           rdfs:domain <http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY> ;
-           rdfs:range <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1> .
+           rdfs:domain :Round ;
+           rdfs:range :Division .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#newContract
+
 :newContract rdf:type owl:ObjectProperty ;
-             rdfs:domain <http://webprotege.stanford.edu/R8ghfdqdMSV1IxRXIJSvGpc> ;
-             rdfs:range <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ> ;
+             rdfs:domain :Transfer ;
+             rdfs:range :AssosiationContract ;
              owl:propertyDisjointWith :oldContract .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#offers
+
 :offers rdf:type owl:ObjectProperty ;
-        rdfs:domain <http://webprotege.stanford.edu/R7y4pCoDX4jslOv0nADpy4h> ;
-        rdfs:range <http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me> .
+        rdfs:domain :BettingProvider ;
+        rdfs:range :Bet .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#oldContract
+
 :oldContract rdf:type owl:ObjectProperty ;
-             rdfs:domain <http://webprotege.stanford.edu/R8ghfdqdMSV1IxRXIJSvGpc> ;
-             rdfs:range <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ> .
+             rdfs:domain :Transfer ;
+             rdfs:range :AssosiationContract .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#on
+
 :on rdf:type owl:ObjectProperty ;
-    rdfs:domain <http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me> ;
-    rdfs:range <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> .
+    rdfs:domain :Bet ;
+    rdfs:range :Game .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#places
+
 :places rdf:type owl:ObjectProperty ;
-        rdfs:domain <http://webprotege.stanford.edu/RDWOTtKOjaDoqn8hxZAg6uq> ;
-        rdfs:range <http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me> .
+        rdfs:domain :User ;
+        rdfs:range :Bet .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#takesPlace
+
 :takesPlace rdf:type owl:ObjectProperty ;
-            rdfs:domain <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> ;
-            rdfs:range <http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2> .
+            rdfs:domain :Game ;
+            rdfs:range :Playground .
 
 
 #################################################################
 #    Data properties
 #################################################################
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805hasName
+
 :hasName rdf:type owl:DatatypeProperty .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasAddress
+
 :hasAddress rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:string .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasCapacity
+
 :hasCapacity rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:int .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasCurrency
+
 :hasCurrency rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:string .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasEmail
+
 :hasEmail rdf:type owl:DatatypeProperty ;
           rdfs:range xsd:string .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasFoundingDate
+
 :hasFoundingDate rdf:type owl:DatatypeProperty ;
                  rdfs:range xsd:dateTime .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasName
+
 :hasName rdf:type owl:DatatypeProperty ;
          rdfs:range xsd:string .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasPassword
+
 :hasPassword rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:string .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasQuote1
+
 :hasQuote1 rdf:type owl:DatatypeProperty ;
            rdfs:range xsd:double .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasQuote2
+
 :hasQuote2 rdf:type owl:DatatypeProperty ;
            rdfs:range xsd:double .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasQuoteX
+
 :hasQuoteX rdf:type owl:DatatypeProperty ;
            rdfs:range xsd:double .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasResult
+
 :hasResult rdf:type owl:DatatypeProperty ;
            rdfs:range xsd:string .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#hasTip
+
 :hasTip rdf:type owl:DatatypeProperty ;
         rdfs:range xsd:string .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#numberOfFields
+
 :numberOfFields rdf:type owl:DatatypeProperty ;
                 rdfs:range xsd:int .
 
 
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805#transferFee
+
 :transferFee rdf:type owl:DatatypeProperty ;
              rdfs:range xsd:double .
 
@@ -241,35 +240,35 @@
 #    Classes
 #################################################################
 
-###  http://webprotege.stanford.edu/R5jsYHYkEjGo98p0eFGBKK
-<http://webprotege.stanford.edu/R5jsYHYkEjGo98p0eFGBKK> rdf:type owl:Class ;
+
+:Person                                                 rdf:type owl:Class ;
                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasNation ;
                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://webprotege.stanford.edu/RDCwVahcQuHFihNCAOLCglm>
+                                                                          owl:onClass :Nation
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasName ;
                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                           owl:onDataRange xsd:string
                                                                         ] ;
-                                                        owl:disjointUnionOf ( <http://webprotege.stanford.edu/RDWOTtKOjaDoqn8hxZAg6uq>
-                                                                              <http://webprotege.stanford.edu/RDbnn6fGx8nEccJa5hh3YbB>
+                                                        owl:disjointUnionOf ( :User
+                                                                              :FootballAssociate
                                                                             ) ;
                                                         rdfs:label "Person"@en .
 
 
-###  http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY
-<http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY> rdf:type owl:Class ;
+
+:Round rdf:type owl:Class ;
                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasGame ;
                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L>
+                                                                          owl:onClass :Game
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :isRoundOf ;
                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1>
+                                                                          owl:onClass :Division
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasName ;
@@ -279,26 +278,26 @@
                                                         rdfs:label "Round"@en .
 
 
-###  http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5
-<http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5> rdf:type owl:Class ;
+
+:Contract rdf:type owl:Class ;
                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasAssociate ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/RDbnn6fGx8nEccJa5hh3YbB>
+                                                                           owl:onClass :FootballAssociate
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasRole ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/RG7JVZGhCfCoLL1R0hZ1SX>
+                                                                           owl:onClass :Role
                                                                          ] ;
-                                                         owl:disjointUnionOf ( <http://webprotege.stanford.edu/RCTnEXnYVMGS757Vk8D8j8X>
-                                                                               <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ>
+                                                         owl:disjointUnionOf ( :RefereeContract
+                                                                               :AssosiationContract
                                                                              ) ;
                                                          rdfs:label "Contract"@en .
 
 
-###  http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38
-<http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38> rdf:type owl:Class ;
+
+:Infrastructure rdf:type owl:Class ;
                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasAddress ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -307,16 +306,16 @@
                                                          rdfs:label "Infrastructure"@en .
 
 
-###  http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID
-<http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID> rdf:type owl:Class ;
+
+:Team rdf:type owl:Class ;
                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasSponsor ;
-                                                                           owl:someValuesFrom <http://webprotege.stanford.edu/R8TfsCgJwOKgOnV8k60pcrX>
+                                                                           owl:someValuesFrom :Sponsor
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <http://webprotege.stanford.edu/R9RvfRluqT2SPTS9B82FMSS> ;
+                                                                           owl:onProperty :isTeamOf ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK>
+                                                                           owl:onClass :Assosiation
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasName ;
@@ -326,9 +325,9 @@
                                                          rdfs:label "Team"@en .
 
 
-###  http://webprotege.stanford.edu/R7uZtzwIyJYGAN8XKeH3d3W
-<http://webprotege.stanford.edu/R7uZtzwIyJYGAN8XKeH3d3W> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38> ,
+
+:Office rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Infrastructure ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasEmail ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -337,11 +336,11 @@
                                                          rdfs:label "Office"@en .
 
 
-###  http://webprotege.stanford.edu/R7y4pCoDX4jslOv0nADpy4h
-<http://webprotege.stanford.edu/R7y4pCoDX4jslOv0nADpy4h> rdf:type owl:Class ;
+
+:BettingProvider rdf:type owl:Class ;
                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :offers ;
-                                                                           owl:someValuesFrom <http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me>
+                                                                           owl:someValuesFrom :Bet
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasName ;
@@ -351,9 +350,9 @@
                                                          rdfs:label "BettingProvider"@en .
 
 
-###  http://webprotege.stanford.edu/R87xJr21RJbDDYMewZ0QzyK
-<http://webprotege.stanford.edu/R87xJr21RJbDDYMewZ0QzyK> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2> ,
+
+:Stadium rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Playground ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasName ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -362,14 +361,14 @@
                                                          rdfs:label "Stadium"@en .
 
 
-###  http://webprotege.stanford.edu/R8MDKKhCwagPd5BFLeghc47
-<http://webprotege.stanford.edu/R8MDKKhCwagPd5BFLeghc47> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg> ;
+
+:SelectionCompetition rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Competition ;
                                                          rdfs:label "SelectionCompetition"@en .
 
 
-###  http://webprotege.stanford.edu/R8TfsCgJwOKgOnV8k60pcrX
-<http://webprotege.stanford.edu/R8TfsCgJwOKgOnV8k60pcrX> rdf:type owl:Class ;
+
+:Sponsor rdf:type owl:Class ;
                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasName ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -378,17 +377,17 @@
                                                          rdfs:label "Sponsor"@en .
 
 
-###  http://webprotege.stanford.edu/R8ghfdqdMSV1IxRXIJSvGpc
-<http://webprotege.stanford.edu/R8ghfdqdMSV1IxRXIJSvGpc> rdf:type owl:Class ;
+
+:Transfer rdf:type owl:Class ;
                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :newContract ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ>
+                                                                           owl:onClass :AssosiationContract
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :oldContract ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ>
+                                                                           owl:onClass :AssosiationContract
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasCurrency ;
@@ -403,27 +402,27 @@
                                                          rdfs:label "Transfer"@en .
 
 
-###  http://webprotege.stanford.edu/R8olu6yDK1btdTG7p2FsPOF
-<http://webprotege.stanford.edu/R8olu6yDK1btdTG7p2FsPOF> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg> ;
-                                                         owl:disjointUnionOf ( <http://webprotege.stanford.edu/Re9XF7v7j2gGhXXnNBE69Z>
-                                                                               <http://webprotege.stanford.edu/RecIQcjd3CEbf810RrfUga>
+
+:ClubCompetition rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Competition ;
+                                                         owl:disjointUnionOf ( :DomesticClubCompetitions
+                                                                               :InternationClubCompetition
                                                                              ) ;
                                                          rdfs:label "ClubCompetition"@en .
 
 
-###  http://webprotege.stanford.edu/R9SwQKNdMa1qHORxX4yjNDz
-<http://webprotege.stanford.edu/R9SwQKNdMa1qHORxX4yjNDz> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> ;
+
+:Selection rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Assosiation ;
                                                          rdfs:label "Selection"@en .
 
 
-###  http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me
-<http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me> rdf:type owl:Class ;
+
+:Bet rdf:type owl:Class ;
                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :on ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L>
+                                                                           owl:onClass :Game
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasQuote1 ;
@@ -448,9 +447,9 @@
                                                          rdfs:label "Bet"@en .
 
 
-###  http://webprotege.stanford.edu/RBSBs8bYoH0UZJeHzCQRo2
-<http://webprotege.stanford.edu/RBSBs8bYoH0UZJeHzCQRo2> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2> ,
+
+:TrainingCenter rdf:type owl:Class ;
+                                                        rdfs:subClassOf :Playground ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :numberOfFields ;
                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -459,20 +458,20 @@
                                                         rdfs:label "TrainingCenter"@en .
 
 
-###  http://webprotege.stanford.edu/RCTnEXnYVMGS757Vk8D8j8X
-<http://webprotege.stanford.edu/RCTnEXnYVMGS757Vk8D8j8X> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5> ,
+
+:RefereeContract rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Contract ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :forGame ;
                                                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L>
+                                                                           owl:onClass :Game
                                                                          ] ;
                                                          rdfs:label "RefereeContract"@en .
 
 
-###  http://webprotege.stanford.edu/RCh5jqhmXCYHAoKv1IEUGV5
-<http://webprotege.stanford.edu/RCh5jqhmXCYHAoKv1IEUGV5> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> ,
+
+:Club rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Assosiation ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasFoundingDate ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -481,21 +480,21 @@
                                                          rdfs:label "Club"^^xsd:string .
 
 
-###  http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK
-<http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK> rdf:type owl:Class ;
+
+:Assosiation rdf:type owl:Class ;
                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasInfrastructure ;
-                                                                           owl:someValuesFrom <http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38>
+                                                                           owl:someValuesFrom :Infrastructure
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
-                                                                           owl:onProperty <http://webprotege.stanford.edu/RCxmFQLAQPxNKRJ7pDRFSJM> ;
+                                                                           owl:onProperty :hasTeam ;
                                                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID>
+                                                                           owl:onClass :Team
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasNation ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/RDCwVahcQuHFihNCAOLCglm>
+                                                                           owl:onClass :Nation
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasFoundingDate ;
@@ -507,14 +506,14 @@
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                            owl:onDataRange xsd:string
                                                                          ] ;
-                                                         owl:disjointUnionOf ( <http://webprotege.stanford.edu/R9SwQKNdMa1qHORxX4yjNDz>
-                                                                               <http://webprotege.stanford.edu/RCh5jqhmXCYHAoKv1IEUGV5>
+                                                         owl:disjointUnionOf ( :Selection
+                                                                               :Club
                                                                              ) ;
                                                          rdfs:label "Assosiation"@en .
 
 
-###  http://webprotege.stanford.edu/RDCwVahcQuHFihNCAOLCglm
-<http://webprotege.stanford.edu/RDCwVahcQuHFihNCAOLCglm> rdf:type owl:Class ;
+
+:Nation rdf:type owl:Class ;
                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasName ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -524,24 +523,24 @@
                                                          rdfs:label "Nation"@en .
 
 
-###  http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ
-<http://webprotege.stanford.edu/RDDW6zzwdqfSELkehkVv6qJ> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/R7JATOT3NnjY3UuAqlNLSd5> ,
+
+:AssosiationContract rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Contract ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :forSeason ;
                                                                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/RDPjDOwslGipHlLDzN5ZDKV>
+                                                                           owl:onClass :Season
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasAssociation ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                           owl:onClass <http://webprotege.stanford.edu/RCvlwj7NqzptOwtk3WDBcYK>
+                                                                           owl:onClass :Assosiation
                                                                          ] ;
                                                          rdfs:label "AssosiationContract"@en .
 
 
-###  http://webprotege.stanford.edu/RDPjDOwslGipHlLDzN5ZDKV
-<http://webprotege.stanford.edu/RDPjDOwslGipHlLDzN5ZDKV> rdf:type owl:Class ;
+
+:Season rdf:type owl:Class ;
                                                          rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasName ;
                                                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -550,12 +549,12 @@
                                                          rdfs:label "Season"@en .
 
 
-###  http://webprotege.stanford.edu/RDWOTtKOjaDoqn8hxZAg6uq
-<http://webprotege.stanford.edu/RDWOTtKOjaDoqn8hxZAg6uq> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/R5jsYHYkEjGo98p0eFGBKK> ,
+
+:User rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Person ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :places ;
-                                                                           owl:someValuesFrom <http://webprotege.stanford.edu/RBE1GX1ZfbdS9fhSbe066Me>
+                                                                           owl:someValuesFrom :Bet
                                                                          ] ,
                                                                          [ rdf:type owl:Restriction ;
                                                                            owl:onProperty :hasPassword ;
@@ -565,14 +564,14 @@
                                                          rdfs:label "User"@en .
 
 
-###  http://webprotege.stanford.edu/RDbnn6fGx8nEccJa5hh3YbB
-<http://webprotege.stanford.edu/RDbnn6fGx8nEccJa5hh3YbB> rdf:type owl:Class ;
-                                                         rdfs:subClassOf <http://webprotege.stanford.edu/R5jsYHYkEjGo98p0eFGBKK> ;
+
+:FootballAssociate rdf:type owl:Class ;
+                                                         rdfs:subClassOf :Person ;
                                                          rdfs:label "FootballAssociate"@en .
 
 
-###  http://webprotege.stanford.edu/RG7JVZGhCfCoLL1R0hZ1SX
-<http://webprotege.stanford.edu/RG7JVZGhCfCoLL1R0hZ1SX> rdf:type owl:Class ;
+
+:Role rdf:type owl:Class ;
                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasName ;
                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -581,9 +580,9 @@
                                                         rdfs:label "Role"@en .
 
 
-###  http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2
-<http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://webprotege.stanford.edu/R7l43z7cEqpBOBwulmU9g38> ,
+
+:Playground rdf:type owl:Class ;
+                                                        rdfs:subClassOf :Infrastructure ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasCapacity ;
                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -592,35 +591,35 @@
                                                         rdfs:label "Playground"@en .
 
 
-###  http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg
-<http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg> rdf:type owl:Class ;
+
+:Competition rdf:type owl:Class ;
                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasDivision ;
                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1>
+                                                                          owl:onClass :Division
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasName ;
                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                                                                           owl:onDataRange xsd:string
                                                                         ] ;
-                                                        owl:disjointUnionOf ( <http://webprotege.stanford.edu/R8MDKKhCwagPd5BFLeghc47>
-                                                                              <http://webprotege.stanford.edu/R8olu6yDK1btdTG7p2FsPOF>
+                                                        owl:disjointUnionOf ( :SelectionCompetition
+                                                                              :ClubCompetition
                                                                             ) ;
                                                         rdfs:label "Competition"@en .
 
 
-###  http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L
-<http://webprotege.stanford.edu/RZ2x7RjPGv2xlak3MKke3L> rdf:type owl:Class ;
+
+:Game rdf:type owl:Class ;
                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasParticipant ;
                                                                           owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://webprotege.stanford.edu/R7uU2RtYSy3CDQCCdJ59vID>
+                                                                          owl:onClass :Team
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :takesPlace ;
                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://webprotege.stanford.edu/RRAOHyx26HLn4XgTllyji2>
+                                                                          owl:onClass :Playground
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasResult ;
@@ -630,29 +629,29 @@
                                                         rdfs:label "Game"@en .
 
 
-###  http://webprotege.stanford.edu/Re9XF7v7j2gGhXXnNBE69Z
-<http://webprotege.stanford.edu/Re9XF7v7j2gGhXXnNBE69Z> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://webprotege.stanford.edu/R8olu6yDK1btdTG7p2FsPOF> ;
+
+:DomesticClubCompetitions rdf:type owl:Class ;
+                                                        rdfs:subClassOf :ClubCompetition ;
                                                         rdfs:label "DomesticClubCompetitions"^^xsd:string .
 
 
-###  http://webprotege.stanford.edu/RecIQcjd3CEbf810RrfUga
-<http://webprotege.stanford.edu/RecIQcjd3CEbf810RrfUga> rdf:type owl:Class ;
-                                                        rdfs:subClassOf <http://webprotege.stanford.edu/R8olu6yDK1btdTG7p2FsPOF> ;
+
+:InternationClubCompetition rdf:type owl:Class ;
+                                                        rdfs:subClassOf :ClubCompetition ;
                                                         rdfs:label "InternationClubCompetition"@en .
 
 
-###  http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1
-<http://webprotege.stanford.edu/RugsAUXNzzRiQ08HUAOhZ1> rdf:type owl:Class ;
+
+:Division rdf:type owl:Class ;
                                                         rdfs:subClassOf [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasRound ;
                                                                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://webprotege.stanford.edu/R6qcBZe9hH50vpcL2EnQmY>
+                                                                          owl:onClass :Round
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :isDivisionOf ;
                                                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                                                          owl:onClass <http://webprotege.stanford.edu/RSiCRsPpvGjBc1sxfulavg>
+                                                                          owl:onClass :Competition
                                                                         ] ,
                                                                         [ rdf:type owl:Restriction ;
                                                                           owl:onProperty :hasName ;
@@ -661,235 +660,3 @@
                                                                         ] ;
                                                         rdfs:label "Divison"@en .
 
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805Club
-:Club rdf:type owl:Class .
-
-
-#################################################################
-#    Individuals
-#################################################################
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/0
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/0> rdf:type owl:NamedIndividual ,
-                                                                                             :Club ;
-                                                                                    :hasName "Blackpool"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/1
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/1> rdf:type owl:NamedIndividual ,
-                                                                                             :Club ;
-                                                                                    :hasName "Liverpool"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/10
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/10> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Birmingham City"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/11
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/11> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Tottenham Hotspur"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/12
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/12> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "West Bromwich Albion"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/13
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/13> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "West Ham United"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/14
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/14> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Aston Villa"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/15
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/15> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Everton"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/16
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/16> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Newcastle United"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/17
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/17> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Wigan Athletic"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/18
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/18> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Wolverhampton Wanderers"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/19
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/19> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Chelsea"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/2
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/2> rdf:type owl:NamedIndividual ,
-                                                                                             :Club ;
-                                                                                    :hasName "Manchester United"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/20
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/20> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Swansea City"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/21
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/21> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Queens Park Rangers"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/22
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/22> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Norwich City"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/23
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/23> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Reading"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/24
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/24> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Southampton"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/25
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/25> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Crystal Palace"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/26
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/26> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Cardiff City"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/27
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/27> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Hull City"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/28
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/28> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Burnley"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/29
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/29> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Leicester City"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/3
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/3> rdf:type owl:NamedIndividual ,
-                                                                                             :Club ;
-                                                                                    :hasName "Stoke City"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/30
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/30> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Watford"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/31
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/31> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "AFC Bournemouth"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/32
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/32> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Middlesbrough"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/33
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/33> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Brighton and Hove Albion"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/34
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/34> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Huddersfield Town"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/35
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/35> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Sheffield United"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/36
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/36> rdf:type owl:NamedIndividual ,
-                                                                                              :Club ;
-                                                                                     :hasName "Leeds United"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/4
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/4> rdf:type owl:NamedIndividual ,
-                                                                                             :Club ;
-                                                                                    :hasName "Fulham"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/5
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/5> rdf:type owl:NamedIndividual ,
-                                                                                             :Club ;
-                                                                                    :hasName "Blackburn Rovers"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/6
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/6> rdf:type owl:NamedIndividual ,
-                                                                                             :Club ;
-                                                                                    :hasName "Manchester City"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/7
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/7> rdf:type owl:NamedIndividual ,
-                                                                                             :Club ;
-                                                                                    :hasName "Sunderland"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/8
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/8> rdf:type owl:NamedIndividual ,
-                                                                                             :Club ;
-                                                                                    :hasName "Bolton Wanderers"^^xsd:string .
-
-
-###  urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/9
-<urn:webprotege:ontology:0bdcada4-2ad1-4705-8fe2-bbe274152805/data/football/team/9> rdf:type owl:NamedIndividual ,
-                                                                                             :Club ;
-                                                                                    :hasName "Arsenal"^^xsd:string .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
