@@ -2,7 +2,7 @@ FROM postgres:14.2
 ENV POSTGRES_USER saiks2022
 ENV POSTGRES_PASSWORD saiks2022
 ENV POSTGRES_DB football
-COPY create.sql /docker-entrypoint-initdb.d/
+COPY scripts/create.sql /docker-entrypoint-initdb.d/
 #COPY scripts/environment.yml /docker-entrypoint-initdb.d/
 #COPY scripts/import_data.py /docker-entrypoint-initdb.d/
 #COPY scripts/import_data.sh /docker-entrypoint-initdb.d/
