@@ -11,7 +11,11 @@ rdfs:		http://www.w3.org/2000/01/rdf-schema#
 
 [MappingDeclaration] @collection [[
 mappingId	football-team
-target		football:team/{id_team} a :Club ; :hasName {club}^^xsd:string . 
+target		football:team/{id_team} a football:ontology#Club ; football:ontology#hasName {club}^^xsd:string . 
 source		SELECT * FROM team
+
+mappingId	football-player
+target		football:player/{id_player} a football:ontology#FootballAssociate ; football:ontology#hasName {name}^^xsd:string . 
+source		SELECT id_player, name from player
 ]]
 
