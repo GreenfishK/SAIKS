@@ -11,21 +11,21 @@ rdfs:		http://www.w3.org/2000/01/rdf-schema#
 football:	http://www.semanticweb.org/saiks2022/football/
 
 [MappingDeclaration] @collection [[
-mappingId	football-team
+mappingId	football-club
 target		football:club/{id_club} a football:ontology#Club ; football:ontology#hasName {club_name}^^xsd:string ; football:ontology#hasTeam football:club/{id_club}/team/first-team_squad . football:club/{id_club}/team/first-team_squad a football:ontology#Team ; football:ontology#hasName {team_name}^^xsd:string . 
-source		SELECT id_team as "id_club", club as "club_name", concat(club, ' first-team_squad') as "team_name" FROM team
+source		SELECT 'c' || id_team as "id_club", club as "club_name", concat(club, ' first-team_squad') as "team_name" FROM team
 
 mappingId	football-player
 target		football:player/{id_player} a football:ontology#FootballAssociate ; football:ontology#hasName {name}^^xsd:string . 
-source		SELECT id_player, name from player
+source		SELECT 'p' || id_player as id_player, name from player
 
 mappingId	football-match
 target		football:game/{id_match} a football:ontology#Game ; football:ontology#hasHomeParticipant football:club/{id_home}/team/first-team_squad ; football:ontology#hasAwayParticipant football:club/{id_away}/team/first-team_squad ; football:ontology#matchDateTime {date_time}^^xsd:dateTime . 
-source		SELECT id_match, id_home, id_away, to_char(date_time, 'YYYY-MM-DDThh:mm:ssZ') as "date_time" FROM match
+source		SELECT 'g' || id_match as id_match, 'c' || id_home as "id_home", 'c' || id_away as "id_away", to_char(date_time, 'YYYY-MM-DDThh:mm:ssZ') as "date_time" FROM match
 
 mappingId	football-contract
 target		football:contract/{contract_id} a football:ontology#AssociationContract ; football:ontology#forSeason football:season/{season} ; football:ontology#hasAssociation football:club/{id_club} ; football:ontology#hasRole football:position/{position} ; football:ontology#hasAssociate football:player/{id_player} . football:position/{position} a football:ontology#Role ; football:ontology#hasName {position}^^xsd:string . football:season/{season} a football:ontology#Season ; football:ontology#hasName {season} . 
-source		Select md5(chr(a.id_player) || chr(a.id_team) || a.transfer_period || a.season) as "contract_id", a.id_player, b.name, a.id_team as "id_club", c.club, a.transfer_period, a.season, a.position, a.year
+source		Select md5(chr(a.id_player) || chr(a.id_team) || a.transfer_period || a.season) as "contract_id", 'p' || a.id_player as "id_player", b.name, 'c' || a.id_team as "id_club", c.club, a.transfer_period, a.season, a.position, a.year
 			from contract a
 			join player b on (a.id_player = b.id_player)
 			join team c on (a.id_team = c.id_team)
