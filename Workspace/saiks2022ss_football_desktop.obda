@@ -1,6 +1,6 @@
 [PrefixDeclaration]
-:		    http://www.semanticweb.org/saiks2022/football/ontology#
-football:	http://www.semanticweb.org/saiks2022/football/
+:		http://www.semanticweb.org/saiks2022/football/ontology#
+ex:		http://example.org/
 owl:		http://www.w3.org/2002/07/owl#
 rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
 xml:		http://www.w3.org/XML/1998/namespace
@@ -8,14 +8,19 @@ xsd:		http://www.w3.org/2001/XMLSchema#
 foaf:		http://xmlns.com/foaf/0.1/
 obda:		https://w3id.org/obda/vocabulary#
 rdfs:		http://www.w3.org/2000/01/rdf-schema#
+football:	http://www.semanticweb.org/saiks2022/football/
 
 [MappingDeclaration] @collection [[
 mappingId	football-team
-target		football:team/{id_team} a football:ontology#Club ; football:ontology#hasName {club}^^xsd:string . 
-source		SELECT * FROM team
+target		football:club/{id_club} a football:ontology#Club ; football:ontology#hasName {club_name}^^xsd:string ; football:ontology#hasTeam football:club/{id_club}/team/first-team_squad . football:club/{id_club}/team/first-team_squad a football:ontology#Team ; football:ontology#hasName {team_name}^^xsd:string . 
+source		SELECT id_team as "id_club", club as "club_name", concat(club, ' first-team_squad') as "team_name" FROM team
 
 mappingId	football-player
 target		football:player/{id_player} a football:ontology#FootballAssociate ; football:ontology#hasName {name}^^xsd:string . 
 source		SELECT id_player, name from player
+
+mappingId	football-match
+target		football:game/{id_match} a football:ontology#Game ; football:ontology#hasHomeParticipant football:club/{id_home}/team/first-team_squad ; football:ontology#hasAwayParticipant football:club/{id_away}/team/first-team_squad ; football:ontology#matchDateTime {date_time}^^xsd:dateTime . 
+source		SELECT id_match, id_home, id_away, to_char(date_time, 'YYYY-MM-DDThh:mm:ssZ') FROM match
 ]]
 
