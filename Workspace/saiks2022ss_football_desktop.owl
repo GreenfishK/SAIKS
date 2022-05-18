@@ -24,7 +24,7 @@
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#forSeason
 :forSeason rdf:type owl:ObjectProperty ;
-           rdfs:domain :AssosiationContract ;
+           rdfs:domain :AssociationContract ;
            rdfs:range :Season .
 
 
@@ -36,8 +36,8 @@
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasAssociation
 :hasAssociation rdf:type owl:ObjectProperty ;
-                rdfs:domain :AssosiationContract ;
-                rdfs:range :Assosiation .
+                rdfs:domain :AssociationContract ;
+                rdfs:range :Association .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasAwayParticipant
@@ -71,7 +71,7 @@
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasInfrastructure
 :hasInfrastructure rdf:type owl:ObjectProperty ;
-                   rdfs:domain :Assosiation ;
+                   rdfs:domain :Association ;
                    rdfs:range :Infrastructure .
 
 
@@ -110,7 +110,7 @@
          rdfs:subPropertyOf owl:topObjectProperty ;
          owl:inverseOf :isTeamOf ;
          rdf:type owl:TransitiveProperty ;
-         rdfs:domain :Assosiation ;
+         rdfs:domain :Association ;
          rdfs:range :Team ;
          rdfs:label "hasTeam"@en .
 
@@ -133,14 +133,14 @@
           rdfs:subPropertyOf owl:topObjectProperty ;
           rdf:type owl:TransitiveProperty ;
           rdfs:domain :Team ;
-          rdfs:range :Assosiation ;
+          rdfs:range :Association ;
           rdfs:label "isTeamOf"@en .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#newContract
 :newContract rdf:type owl:ObjectProperty ;
              rdfs:domain :Transfer ;
-             rdfs:range :AssosiationContract ;
+             rdfs:range :AssociationContract ;
              owl:propertyDisjointWith :oldContract .
 
 
@@ -153,7 +153,7 @@
 ###  http://www.semanticweb.org/saiks2022/football/ontology#oldContract
 :oldContract rdf:type owl:ObjectProperty ;
              rdfs:domain :Transfer ;
-             rdfs:range :AssosiationContract .
+             rdfs:range :AssociationContract .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#on
@@ -257,8 +257,8 @@
 #    Classes
 #################################################################
 
-###  http://www.semanticweb.org/saiks2022/football/ontology#Assosiation
-:Assosiation rdf:type owl:Class ;
+###  http://www.semanticweb.org/saiks2022/football/ontology#Association
+:Association rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
                                owl:onProperty :hasInfrastructure ;
                                owl:someValuesFrom :Infrastructure
@@ -286,11 +286,11 @@
              owl:disjointUnionOf ( :Club
                                    :Selection
                                  ) ;
-             rdfs:label "Assosiation"@en .
+             rdfs:label "Association"@en .
 
 
-###  http://www.semanticweb.org/saiks2022/football/ontology#AssosiationContract
-:AssosiationContract rdf:type owl:Class ;
+###  http://www.semanticweb.org/saiks2022/football/ontology#AssociationContract
+:AssociationContract rdf:type owl:Class ;
                      rdfs:subClassOf :Contract ,
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :forSeason ;
@@ -300,9 +300,9 @@
                                      [ rdf:type owl:Restriction ;
                                        owl:onProperty :hasAssociation ;
                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                       owl:onClass :Assosiation
+                                       owl:onClass :Association
                                      ] ;
-                     rdfs:label "AssosiationContract"@en .
+                     rdfs:label "AssociationContract"@en .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Bet
@@ -351,7 +351,7 @@
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Club
 :Club rdf:type owl:Class ;
-      rdfs:subClassOf :Assosiation ,
+      rdfs:subClassOf :Association ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :hasFoundingDate ;
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
@@ -399,7 +399,7 @@
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass :Role
                           ] ;
-          owl:disjointUnionOf ( :AssosiationContract
+          owl:disjointUnionOf ( :AssociationContract
                                 :RefereeContract
                               ) ;
           rdfs:label "Contract"@en .
@@ -587,7 +587,7 @@
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Selection
 :Selection rdf:type owl:Class ;
-           rdfs:subClassOf :Assosiation ;
+           rdfs:subClassOf :Association ;
            rdfs:comment "Selection can be a club or a national selection according to https://alvin-almazov.com/soccer-eng/selection/. Maybe this should replace the association?" ;
            rdfs:label "Selection"@en .
 
@@ -628,7 +628,7 @@
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :isTeamOf ;
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                        owl:onClass :Assosiation
+                        owl:onClass :Association
                       ] ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :hasName ;
@@ -655,12 +655,12 @@
           rdfs:subClassOf [ rdf:type owl:Restriction ;
                             owl:onProperty :newContract ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass :AssosiationContract
+                            owl:onClass :AssociationContract
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :oldContract ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass :AssosiationContract
+                            owl:onClass :AssociationContract
                           ] ,
                           [ rdf:type owl:Restriction ;
                             owl:onProperty :hasCurrency ;

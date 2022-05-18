@@ -21,6 +21,13 @@ source		SELECT id_player, name from player
 
 mappingId	football-match
 target		football:game/{id_match} a football:ontology#Game ; football:ontology#hasHomeParticipant football:club/{id_home}/team/first-team_squad ; football:ontology#hasAwayParticipant football:club/{id_away}/team/first-team_squad ; football:ontology#matchDateTime {date_time}^^xsd:dateTime . 
-source		SELECT id_match, id_home, id_away, to_char(date_time, 'YYYY-MM-DDThh:mm:ssZ') FROM match
+source		SELECT id_match, id_home, id_away, to_char(date_time, 'YYYY-MM-DDThh:mm:ssZ') as "date_time" FROM match
+
+mappingId	football-contract
+target		football:contract/{contract_id} a football:ontology#AssociationContract ; football:ontology#forSeason football:season/{season} ; football:ontology#hasAssociation football:club/{id_club} ; football:ontology#hasRole football:position/{position} ; football:ontology#hasAssociate football:player/{id_player} . football:position/{position} a football:ontology#Role ; football:ontology#hasName {position}^^xsd:string . football:season/{season} a football:ontology#Season ; football:ontology#hasName {season} . 
+source		Select md5(chr(a.id_player) || chr(a.id_team) || a.transfer_period || a.season) as "contract_id", a.id_player, b.name, a.id_team as "id_club", c.club, a.transfer_period, a.season, a.position, a.year
+			from contract a
+			join player b on (a.id_player = b.id_player)
+			join team c on (a.id_team = c.id_team)
 ]]
 
