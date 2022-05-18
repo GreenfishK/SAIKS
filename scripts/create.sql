@@ -70,8 +70,8 @@ create table result (
 	assists smallint not null check(assists >= 0) --missing
 );*/
 
-create table platformUser (
-    id_user smallint primary key, --auto incr
+create table platform_user (
+    id_user decimal(6) primary key, --auto incr
     name varchar(50) not null -- synthetic
 );
 
@@ -86,7 +86,7 @@ create table bet (
 );
 
 create table user_bet (
-    id_user smallint not null references platformUser(id_user),
+    id_user decimal(6) not null references platform_user(id_user),
     id_bet smallint not null references bet(id_bet),
     tip varchar(1) not null check(tip='H' OR tip='D' OR tip ='A'), --synthetic
     tip_timestamp timestamp not null, --synthetic

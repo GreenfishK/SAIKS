@@ -7,9 +7,12 @@ import os
 from sqlalchemy import create_engine
 
 base_dir = '/home/saiks/Datasets/'
-# Bets
+# Betting odds
 df_betting_odds = pd.read_csv(base_dir + 'betting-odds/E0.csv')
 df_betting_odds = df_betting_odds[['Date', 'Time', 'HomeTeam', 'AwayTeam', 'B365H',	'B365D', 'B365A']]
+
+# Bets
+df_bets = pd.read_csv(base_dir + 'bets/bets.csv')
 
 # Premier League games
 df_games_premiere_league = pd.read_csv(base_dir + 'games-premier-league/df_full_premierleague.csv')
@@ -52,7 +55,7 @@ df_transfers.columns = [c.lower() for c in df_transfers.columns]
 ################################################################
 
 engine = create_engine('postgresql://saiks2022:saiks2022@saiks:5432/football')
-engine.execute("Truncate contract, user_bet, bet, result, match, platformUser, player, team, stadium;")
+engine.execute("Truncate contract, user_bet, bet, result, match, platform_user, player, team, stadium;")
 
 # df_stadium = pd.DataFrame(columns=['id_stadium', 'full_name', 'capacity'])
 
@@ -96,10 +99,10 @@ df_result.to_sql('result', engine, if_exists="append", index=False)
 # df_score = pd.DataFrame(columns=['id_score', 'id_match', 'id_team', 'goals'])
 
 df_platformuser = pd.DataFrame(columns=['id_user', 'name'])
-df_platformuser['id_user'] = ['000000', '000001', '000002']
+df_platformuser['id_user'] = ['100000', '100001', '100002']
 df_platformuser['name'] = ['Nino', 'Bogdan', 'Filip']
-print("Insert into table platformUser")
-df_platformuser.to_sql('platformUser', engine, if_exists="append", index=False)
+print("Insert into table platform_user")
+df_platformuser.to_sql('platform_user', engine, if_exists="append", index=False)
 
 df_betting_odds['date'] = pd.to_datetime(df_betting_odds['date'])
 df_match['date_time'] = pd.to_datetime(df_match['date_time'])
@@ -115,4 +118,6 @@ df_bet = df_bet[['id_bet', 'id_match', 'bet_offered', 'home_win_odds', 'draw_odd
 print("Insert into table bet")
 df_bet.to_sql('bet', engine, if_exists="append", index=False)
 
-df_user_bet = pd.DataFrame(columns=['id_user', 'id_bet', 'tip', 'tip_timestamp'])
+df_user_bet = df_bets[['id_user', 'id_bet', 'tip', 'tip_timestamp']]
+print("Insert into table user_bet")
+df_user_bet.to_sql('user_bet', engine, if_exists="append", index=False)
