@@ -178,6 +178,11 @@
 #    Data properties
 #################################################################
 
+###  http://www.semanticweb.org/saiks2022/football/ontology#betPlaced
+:betPlaced rdf:type owl:DatatypeProperty ;
+           rdfs:range xsd:dateTime .
+
+
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasAddress
 :hasAddress rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:string .
@@ -311,6 +316,11 @@
                        owl:onProperty :on ;
                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                        owl:onClass :Game
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :betPlaced ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onDataRange xsd:dateTime
                      ] ,
                      [ rdf:type owl:Restriction ;
                        owl:onProperty :hasQuote1 ;
