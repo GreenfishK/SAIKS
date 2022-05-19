@@ -144,10 +144,17 @@
              owl:propertyDisjointWith :oldContract .
 
 
+###  http://www.semanticweb.org/saiks2022/football/ontology#offeredBy
+:offeredBy rdf:type owl:ObjectProperty ;
+           owl:inverseOf :offers ;
+           rdfs:domain :Market ;
+           rdfs:range :Bookmaker .
+
+
 ###  http://www.semanticweb.org/saiks2022/football/ontology#offers
 :offers rdf:type owl:ObjectProperty ;
-        rdfs:domain :BettingProvider ;
-        rdfs:range :Bet .
+        rdfs:domain :Bookmaker ;
+        rdfs:range :Market .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#oldContract
@@ -158,8 +165,21 @@
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#on
 :on rdf:type owl:ObjectProperty ;
-    rdfs:domain :Bet ;
+    rdfs:domain :MatchResult ;
     rdfs:range :Game .
+
+
+###  http://www.semanticweb.org/saiks2022/football/ontology#placeOn
+:placeOn rdf:type owl:ObjectProperty ;
+         rdfs:domain :Bet ;
+         rdfs:range :Market .
+
+
+###  http://www.semanticweb.org/saiks2022/football/ontology#placedBy
+:placedBy rdf:type owl:ObjectProperty ;
+          owl:inverseOf :places ;
+          rdfs:domain :Bet ;
+          rdfs:range :User .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#places
@@ -243,6 +263,11 @@
         rdfs:range xsd:string .
 
 
+###  http://www.semanticweb.org/saiks2022/football/ontology#marketOfferingDate
+:marketOfferingDate rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:dateTime .
+
+
 ###  http://www.semanticweb.org/saiks2022/football/ontology#matchDateTime
 :matchDateTime rdf:type owl:DatatypeProperty ;
                rdfs:range xsd:dateTime .
@@ -313,50 +338,34 @@
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Bet
 :Bet rdf:type owl:Class ;
      rdfs:subClassOf [ rdf:type owl:Restriction ;
-                       owl:onProperty :on ;
+                       owl:onProperty :placeOn ;
                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onClass :Game
+                       owl:onClass :Market
+                     ] ,
+                     [ rdf:type owl:Restriction ;
+                       owl:onProperty :placedBy ;
+                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                       owl:onClass :User
                      ] ,
                      [ rdf:type owl:Restriction ;
                        owl:onProperty :betPlaced ;
                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                        owl:onDataRange xsd:dateTime
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :hasQuote1 ;
-                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onDataRange xsd:double
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :hasQuote2 ;
-                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onDataRange xsd:double
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :hasQuoteX ;
-                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onDataRange xsd:double
-                     ] ,
-                     [ rdf:type owl:Restriction ;
-                       owl:onProperty :hasTip ;
-                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                       owl:onDataRange xsd:string
-                     ] ;
-     rdfs:label "Bet"@en .
+                     ] .
 
 
-###  http://www.semanticweb.org/saiks2022/football/ontology#BettingProvider
-:BettingProvider rdf:type owl:Class ;
-                 rdfs:subClassOf [ rdf:type owl:Restriction ;
-                                   owl:onProperty :offers ;
-                                   owl:someValuesFrom :Bet
-                                 ] ,
-                                 [ rdf:type owl:Restriction ;
-                                   owl:onProperty :hasName ;
-                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                                   owl:onDataRange xsd:string
-                                 ] ;
-                 rdfs:label "BettingProvider"@en .
+###  http://www.semanticweb.org/saiks2022/football/ontology#Bookmaker
+:Bookmaker rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :offers ;
+                             owl:someValuesFrom :Market
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :hasName ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ;
+           rdfs:label "Bookmaker"@en .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Club
@@ -491,6 +500,46 @@
 :InternationClubCompetition rdf:type owl:Class ;
                             rdfs:subClassOf :ClubCompetition ;
                             rdfs:label "InternationClubCompetition"@en .
+
+
+###  http://www.semanticweb.org/saiks2022/football/ontology#Market
+:Market rdf:type owl:Class ;
+        rdfs:subClassOf [ rdf:type owl:Restriction ;
+                          owl:onProperty :offeredBy ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Bookmaker
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :on ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onClass :Game
+                        ] ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :marketOfferingDate ;
+                          owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:dateTime
+                        ] .
+
+
+###  http://www.semanticweb.org/saiks2022/football/ontology#MatchResult
+:MatchResult rdf:type owl:Class ;
+             rdfs:subClassOf :Market ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasQuote1 ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:double
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasQuote2 ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:double
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasQuoteX ;
+                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onDataRange xsd:double
+                             ] ;
+             rdfs:label "MatchResult"@en .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Nation
