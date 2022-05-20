@@ -722,7 +722,7 @@
                         owl:onDataRange xsd:string
                       ] ;
       rdfs:comment "Teams: First-team squad, Under-23s (in premier league)" ;
-      rdfs:label "Team"@en .
+      rdfs:label "Team" .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#TrainingCenter
