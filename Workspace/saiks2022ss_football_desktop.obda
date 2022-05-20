@@ -29,5 +29,14 @@ source		Select md5(chr(a.id_player) || chr(a.id_team) || a.transfer_period || a.
 			from contract a
 			join player b on (a.id_player = b.id_player)
 			join team c on (a.id_team = c.id_team)
+
+mappingId	football-user
+target		football:user/{id_user} a :User ; :hasName {name}^^xsd:string . football:market/{id_market} a :MatchResult ; :hasUnderlyingGame football:game/{id_match} ; :hasBet football:bet/{id_bet} ; :offeredBy football:bookmaker/{bookmaker_name} ; :marketOfferingDate {marketOfferingDate}^^xsd:dateTime ; :hasQuote1 {hasQuote1}^^xsd:double ; :hasQuoteX {hasQuoteX}^^xsd:double ; :hasQuote2 {hasQuote2}^^xsd:double . football:bet/{id_bet} a :Bet ; :placedBy football:user/{id_user} ; :betPlaced {bet_placed}^^xsd:dateTime ; :hasTip {tip}^^xsd:string . 
+source		select a.id_bet, a.bet_offered as "marketOfferingDate", a.id_match, a.home_win_odds as "hasQuote1", a.draw_odds as "hasQuoteX", a.away_win_odds as "hasQuote2", a.betting_provider as "bookmaker_name", c.id_user, c.name,  b.tip,  b.tip_timestamp as "bet_placed", md5(concat(a.id_match, a.betting_provider, a.bet_offered)) as id_market
+			from bet a 
+			left join user_bet b
+			on (a.id_bet = b.id_bet)
+			left join platform_user c
+			on (b.id_user = c.id_user)
 ]]
 

@@ -125,8 +125,8 @@
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasUnderlyingGame
 :hasUnderlyingGame rdf:type owl:ObjectProperty ;
                    owl:inverseOf :underliesMarket ;
-                   rdfs:domain :Game ;
-                   rdfs:range :Market .
+                   rdfs:domain :Market ;
+                   rdfs:range :Game .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf
