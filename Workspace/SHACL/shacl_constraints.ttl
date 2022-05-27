@@ -1,0 +1,100 @@
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh:    <http://www.w3.org/ns/shacl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix ex:    <http://www.example.org/#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix fb:    <http://www.semanticweb.org/saiks2022/football/ontology#> .
+
+fb:PasswordConstraint a sh:NodeShape ;
+	sh:targetClass fb:User ;
+	sh:property [
+		sh:path fb:hasPassword ;
+		sh:minCount 1 ;
+		sh:maxCount 1 ;
+		sh:minLength 8 ;
+		sh:datatype xsd:string;
+		sh:message "Each user must have a password with a minimum length of 8" ;
+	] ;
+.
+
+fb:QuotesConstraint a sh:NodeShape ;
+	sh:targetClass fb:MatchResult;
+	sh:property [
+		sh:path fb:hasQuote1;
+		sh:minExclusive 1 ;
+		sh:message "Quotes must be greater than one";
+		sh:datatype xsd:double;
+	] ;
+	sh:property [
+		sh:path fb:hasQuote2;
+		sh:minExclusive 1 ;
+		sh:message "Quotes must be greater than one";
+		sh:datatype xsd:double;
+	] ;
+	sh:property [
+		sh:path fb:hasQuoteX;
+		sh:minExclusive 1 ;
+		sh:message "Quotes must be greater than one";
+		sh:datatype xsd:double;
+	] ;
+.
+
+
+fb:TipConstraint a sh:NodeShape ;
+	sh:targetClass fb:Bet;
+	sh:property [
+		sh:path fb:hasTip;
+		sh:pattern "A|H|D";
+		sh:datatype xsd:string;
+		sh:message "A Tip can only be H, A, or D" ;
+	];
+.
+
+fb:AssociationContractConstraint a sh:NodeShape;
+	sh:targetClass fb:AssociationContract;
+	sh:property [
+		sh:path fb:hasRole;
+		sh:class fb:Role;
+		sh:minCount 1;
+		sh:maxCount 1;
+		sh:message "Each Association Contract must have exactly one Role";
+	];
+	sh:property [
+		sh:path fb:hasAssociate;
+		sh:class fb:FootballAssociate;
+		sh:minCount 1;
+		sh:maxCount 1;
+		sh:message "Each Association Contract must have exactly one Football Associate";
+	];
+	sh:property [
+		sh:path fb:hasSeason;
+		sh:class fb:Season;
+		sh:minCount 1;
+		sh:message "Each Association Contract must have minumum one Season";
+	];
+	sh:property [
+		sh:path fb:hasAssociation;
+		sh:class fb:Association;
+		sh:minCount 1;
+		sh:maxCount 1;
+		sh:message "Each Association Contract must have exactly one Association";
+	];
+.
+
+fb:NationConstraint a sh:NodeShape ;
+	sh:targetClass fb:Association ;
+	sh:property [
+		sh:path fb:hasNation ;
+		sh:or (
+			[
+				sh:datatype xsd:string ;
+			]
+			[
+				sh:class fb:Address ;
+			]
+		);
+		sh:minCount 1;
+		sh:maxCount 1;
+		sh:message "Each Assoction must have exactly one Nation which can be a xsd:string or a fb:Nation";
+	] .
