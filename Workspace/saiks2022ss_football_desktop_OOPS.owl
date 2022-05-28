@@ -7,27 +7,10 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix terms: <http://purl.org/dc/terms/> .
 @prefix football: <http://www.semanticweb.org/saiks2022/football/instances/> .
 @base <http://www.semanticweb.org/saiks2022/football/ontology> .
 
 <http://www.semanticweb.org/saiks2022/football/ontology> rdf:type owl:Ontology .
-
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/terms/license
-terms:license rdf:type owl:AnnotationProperty ;
-              :License """Attribution-NonCommercial-ShareAlike
-CC BY-NC-SA
-
-This license lets others remix, adapt, and build upon your work non-commercially, as long as they credit you and license their new creations under the identical terms."""^^xsd:string .
-
-
-###  http://www.semanticweb.org/saiks2022/football/ontology#License
-:License rdf:type owl:AnnotationProperty .
-
 
 #################################################################
 #    Object Properties
@@ -75,6 +58,7 @@ This license lets others remix, adapt, and build upon your work non-commercially
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasDivision
 :hasDivision rdf:type owl:ObjectProperty ;
              owl:inverseOf :isDivisionOf ;
+             rdf:type owl:TransitiveProperty ;
              rdfs:domain :Competition ;
              rdfs:range :Division .
 
@@ -100,7 +84,6 @@ This license lets others remix, adapt, and build upon your work non-commercially
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasNation
 :hasNation rdf:type owl:ObjectProperty ;
-           rdfs:domain :Person ;
            rdfs:range :Nation .
 
 
@@ -133,6 +116,7 @@ This license lets others remix, adapt, and build upon your work non-commercially
 :hasTeam rdf:type owl:ObjectProperty ;
          rdfs:subPropertyOf owl:topObjectProperty ;
          owl:inverseOf :isTeamOf ;
+         rdf:type owl:TransitiveProperty ;
          rdfs:domain :Association ;
          rdfs:range :Team ;
          rdfs:label "hasTeam"@en .
@@ -146,7 +130,8 @@ This license lets others remix, adapt, and build upon your work non-commercially
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf
-:isDivisionOf rdf:type owl:ObjectProperty ;
+:isDivisionOf rdf:type owl:ObjectProperty ,
+                       owl:TransitiveProperty ;
               rdfs:domain :Division ;
               rdfs:range :Competition .
 
@@ -160,6 +145,7 @@ This license lets others remix, adapt, and build upon your work non-commercially
 ###  http://www.semanticweb.org/saiks2022/football/ontology#isTeamOf
 :isTeamOf rdf:type owl:ObjectProperty ;
           rdfs:subPropertyOf owl:topObjectProperty ;
+          rdf:type owl:TransitiveProperty ;
           rdfs:domain :Team ;
           rdfs:range :Association ;
           rdfs:label "isTeamOf"@en .
@@ -228,103 +214,86 @@ This license lets others remix, adapt, and build upon your work non-commercially
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#betPlaced
 :betPlaced rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Bet ;
            rdfs:range xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasAddress
 :hasAddress rdf:type owl:DatatypeProperty ;
-            rdfs:domain :Office ;
             rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasCapacity
 :hasCapacity rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Stadium ;
              rdfs:range xsd:int .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasCurrency
 :hasCurrency rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Transfer ;
              rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasEmail
 :hasEmail rdf:type owl:DatatypeProperty ;
-          rdfs:domain :Office ;
           rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasFoundingDate
 :hasFoundingDate rdf:type owl:DatatypeProperty ;
-                 rdfs:domain :Club ;
                  rdfs:range xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasName
 :hasName rdf:type owl:DatatypeProperty ;
-         rdfs:domain :Association ;
          rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasPassword
 :hasPassword rdf:type owl:DatatypeProperty ;
-             rdfs:domain :User ;
              rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasQuote1
 :hasQuote1 rdf:type owl:DatatypeProperty ;
-           rdfs:domain :MatchResult ;
            rdfs:range xsd:double .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasQuote2
 :hasQuote2 rdf:type owl:DatatypeProperty ;
-           rdfs:domain :MatchResult ;
            rdfs:range xsd:double .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasQuoteX
 :hasQuoteX rdf:type owl:DatatypeProperty ;
-           rdfs:domain :MatchResult ;
            rdfs:range xsd:double .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasResult
 :hasResult rdf:type owl:DatatypeProperty ;
-           rdfs:domain :Game ;
            rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasTip
 :hasTip rdf:type owl:DatatypeProperty ;
-        rdfs:domain :Bet ;
         rdfs:range xsd:string .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#marketOfferingDate
 :marketOfferingDate rdf:type owl:DatatypeProperty ;
-                    rdfs:domain :Market ;
                     rdfs:range xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#matchDateTime
 :matchDateTime rdf:type owl:DatatypeProperty ;
-               rdfs:domain :Game ;
                rdfs:range xsd:dateTime .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#numberOfFields
 :numberOfFields rdf:type owl:DatatypeProperty ;
-                rdfs:domain :TrainingCenter ;
                 rdfs:range xsd:int .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#transferFee
 :transferFee rdf:type owl:DatatypeProperty ;
-             rdfs:domain :Transfer ;
              rdfs:range xsd:double .
 
 
@@ -556,10 +525,6 @@ This license lets others remix, adapt, and build upon your work non-commercially
                             rdfs:label "InternationClubCompetition"@en .
 
 
-###  http://www.semanticweb.org/saiks2022/football/ontology#License
-:License rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Market
 :Market rdf:type owl:Class ;
         rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -623,7 +588,6 @@ This license lets others remix, adapt, and build upon your work non-commercially
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:string
                         ] ;
-        owl:disjointWith :Role ;
         rdfs:label "Office"@en .
 
 
@@ -815,9 +779,6 @@ This license lets others remix, adapt, and build upon your work non-commercially
 #################################################################
 #    Annotations
 #################################################################
-
-:License terms:license "" .
-
 
 owl:Thing rdfs:comment """Questions:
 Use IDs from tables in knowledge graphs or rather named entities?""" .

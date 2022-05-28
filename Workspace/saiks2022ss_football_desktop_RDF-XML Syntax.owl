@@ -1,0 +1,1227 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/saiks2022/football/ontology#"
+     xml:base="http://www.semanticweb.org/saiks2022/football/ontology"
+     xmlns:ex="http://example.org/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:obda="https://w3id.org/obda/vocabulary#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:football="http://www.semanticweb.org/saiks2022/football/instances/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/saiks2022/football/ontology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/dc/terms/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license">
+        <License rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Attribution-NonCommercial-ShareAlike
+CC BY-NC-SA
+
+This license lets others remix, adapt, and build upon your work non-commercially, as long as they credit you and license their new creations under the identical terms.</License>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#License -->
+
+    <owl:AnnotationProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#License"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#forGame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#forGame">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#RefereeContract"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#forSeason -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#forSeason">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#AssociationContract"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Season"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasAssociate -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasAssociate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Contract"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#FootballAssociate"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasAssociation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasAssociation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#AssociationContract"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Association"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasAwayParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasAwayParticipant">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasParticipant"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasHomeParticipant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasBet -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasBet">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#placeOn"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasDivision -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasDivision">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Competition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasGame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasGame">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Round"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasHomeParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasHomeParticipant">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasParticipant"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasInfrastructure -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasInfrastructure">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Association"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Infrastructure"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasNation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasNation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Nation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasParticipant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasParticipant">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasRole">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Contract"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Role"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasRound -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasRound">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isRoundOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Round"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasSponsor -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasSponsor">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Sponsor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasTeam -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasTeam">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isTeamOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Association"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+        <rdfs:label xml:lang="en">hasTeam</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasUnderlyingGame -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasUnderlyingGame">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#underliesMarket"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Competition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#isRoundOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#isRoundOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Round"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#isTeamOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#isTeamOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Association"/>
+        <rdfs:label xml:lang="en">isTeamOf</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#newContract -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#newContract">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Transfer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#AssociationContract"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#oldContract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#offeredBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#offeredBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#offers"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bookmaker"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#offers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#offers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bookmaker"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#oldContract -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#oldContract">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Transfer"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#AssociationContract"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#placeOn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#placeOn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#placedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#placedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#places"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bet"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#User"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#places -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#places">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#User"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bet"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#takesPlace -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#takesPlace">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Playground"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#underliesMarket -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#underliesMarket">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#betPlaced -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#betPlaced">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasAddress -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasAddress">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Office"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasCapacity -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasCapacity">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Stadium"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasCurrency -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasCurrency">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Transfer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasEmail">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Office"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasFoundingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasFoundingDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Club"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Association"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasPassword -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasPassword">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#User"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasQuote1 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasQuote1">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#MatchResult"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasQuote2 -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasQuote2">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#MatchResult"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasQuoteX -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasQuoteX">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#MatchResult"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasResult -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasResult">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasTip -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasTip">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bet"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#marketOfferingDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#marketOfferingDate">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#matchDateTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#matchDateTime">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#numberOfFields -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#numberOfFields">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#TrainingCenter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#transferFee -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#transferFee">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Transfer"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Association -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Association">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasInfrastructure"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Infrastructure"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasTeam"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasNation"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Nation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasFoundingDate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Club"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Selection"/>
+        </owl:disjointUnionOf>
+        <rdfs:label xml:lang="en">Association</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#AssociationContract -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#AssociationContract">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Contract"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#forSeason"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Season"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasAssociation"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Association"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">AssociationContract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Bet -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Bet">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#placeOn"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#placedBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#User"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#betPlaced"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasTip"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Bookmaker -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Bookmaker">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#offers"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Bookmaker</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Club -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Club">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Association"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasFoundingDate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Club</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#ClubCompetition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#ClubCompetition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Competition"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#DomesticClubCompetitions"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#InternationClubCompetition"/>
+        </owl:disjointUnionOf>
+        <rdfs:label xml:lang="en">ClubCompetition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Competition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Competition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasDivision"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#ClubCompetition"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#SelectionCompetition"/>
+        </owl:disjointUnionOf>
+        <rdfs:label xml:lang="en">Competition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Contract -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Contract">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasAssociate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#FootballAssociate"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasRole"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#AssociationContract"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#RefereeContract"/>
+        </owl:disjointUnionOf>
+        <rdfs:label xml:lang="en">Contract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Division -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Division">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasRound"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Round"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Competition"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Divison</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#DomesticClubCompetitions -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#DomesticClubCompetitions">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#ClubCompetition"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DomesticClubCompetitions</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#FootballAssociate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#FootballAssociate">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
+        <rdfs:label xml:lang="en">FootballAssociate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Game -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Game">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#underliesMarket"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasAwayParticipant"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasHomeParticipant"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#takesPlace"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Playground"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasResult"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#matchDateTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Game</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Infrastructure -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Infrastructure">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasAddress"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Infrastructure</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#InternationClubCompetition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#InternationClubCompetition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#ClubCompetition"/>
+        <rdfs:label xml:lang="en">InternationClubCompetition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#License -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#License"/>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Market -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Market">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasBet"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasUnderlyingGame"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#offeredBy"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bookmaker"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#marketOfferingDate"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#MatchResult -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#MatchResult">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Market"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasQuote1"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasQuote2"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasQuoteX"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">MatchResult</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Nation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Nation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>enum?</rdfs:comment>
+        <rdfs:label xml:lang="en">Nation</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Office -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Office">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Infrastructure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasEmail"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Role"/>
+        <rdfs:label xml:lang="en">Office</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasNation"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Nation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#FootballAssociate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#User"/>
+        </owl:disjointUnionOf>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Playground -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Playground">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Infrastructure"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasCapacity"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Playground</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#RefereeContract -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#RefereeContract">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Contract"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#forGame"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">RefereeContract</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Role -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Role">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Round -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Round">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasGame"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isRoundOf"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Round</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Season -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Season">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Season</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Selection -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Selection">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Association"/>
+        <rdfs:comment>Selection can be a club or a national selection according to https://alvin-almazov.com/soccer-eng/selection/. Maybe this should replace the association?</rdfs:comment>
+        <rdfs:label xml:lang="en">Selection</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#SelectionCompetition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#SelectionCompetition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Competition"/>
+        <rdfs:label xml:lang="en">SelectionCompetition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Sponsor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Sponsor">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Sponsor</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Stadium -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Stadium">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Playground"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Stadium</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Team -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Team">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasSponsor"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Sponsor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isTeamOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Association"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Teams: First-team squad, Under-23s (in premier league)</rdfs:comment>
+        <rdfs:label>Team</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#TrainingCenter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#TrainingCenter">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Playground"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#numberOfFields"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">TrainingCenter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Transfer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Transfer">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#newContract"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#AssociationContract"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#oldContract"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#AssociationContract"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasCurrency"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#transferFee"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Transfer</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#User -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#User">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#places"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Bet"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasPassword"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">User</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#License">
+        <terms:license></terms:license>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
+        <rdfs:comment>Questions:
+Use IDs from tables in knowledge graphs or rather named entities?</rdfs:comment>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
