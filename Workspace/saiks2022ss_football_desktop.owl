@@ -1,5 +1,6 @@
 @prefix : <http://www.semanticweb.org/saiks2022/football/ontology#> .
 @prefix ex: <http://example.org/> .
+@prefix terms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -10,22 +11,15 @@
 @prefix football: <http://www.semanticweb.org/saiks2022/football/instances/> .
 @base <http://www.semanticweb.org/saiks2022/football/ontology> .
 
-<http://www.semanticweb.org/saiks2022/football/ontology> rdf:type owl:Ontology .
+<http://www.semanticweb.org/saiks2022/football/ontology> rdf:type owl:Ontology ;
+                                                         terms:license <https://creativecommons.org/licenses/by-nc-sa/4.0/> .
 
 #################################################################
 #    Annotation properties
 #################################################################
 
 ###  http://purl.org/dc/terms/license
-<http://purl.org/dc/terms/license> rdf:type owl:AnnotationProperty ;
-                                   :License """Attribution-NonCommercial-ShareAlike
-CC BY-NC-SA
-
-This license lets others remix, adapt, and build upon your work non-commercially, as long as they credit you and license their new creations under the identical terms."""^^xsd:string .
-
-
-###  http://www.semanticweb.org/saiks2022/football/ontology#License
-:License rdf:type owl:AnnotationProperty .
+terms:license rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -551,10 +545,6 @@ This license lets others remix, adapt, and build upon your work non-commercially
                             rdfs:label "InternationClubCompetition"@en .
 
 
-###  http://www.semanticweb.org/saiks2022/football/ontology#License
-:License rdf:type owl:Class .
-
-
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Market
 :Market rdf:type owl:Class ;
         rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -633,7 +623,10 @@ This license lets others remix, adapt, and build upon your work non-commercially
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:string
                         ] ;
-        owl:disjointUnionOf ( :FootballAssociate
+        owl:disjointUnionOf ( :Association
+                              :Bookmaker
+                              :FootballAssociate
+                              :Sponsor
                               :User
                             ) ;
         rdfs:comment "Can be a natural or a legal person" ;
@@ -806,8 +799,6 @@ This license lets others remix, adapt, and build upon your work non-commercially
 #################################################################
 #    Annotations
 #################################################################
-
-:License <http://purl.org/dc/terms/license> "" .
 
 
 owl:Thing rdfs:comment """Questions:

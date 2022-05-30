@@ -1,0 +1,50 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/saiks2022/football/ontology#
+ex:		http://example.org/
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+foaf:		http://xmlns.com/foaf/0.1/
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+terms:		http://purl.org/dc/terms/
+football:	http://www.semanticweb.org/saiks2022/football/instances/
+
+[MappingDeclaration] @collection [[
+mappingId	football-club
+target		football:club/{id_club} a :Club ; :hasName {club_name}^^xsd:string ; :hasTeam football:club/{id_club}/team/first-team_squad . football:club/{id_club}/team/first-team_squad a :Team ; :hasName {team_name}^^xsd:string ; rdfs:label {team_name}^^xsd:string . 
+source		SELECT 'c' || id_team as "id_club", club as "club_name", concat(club, ' first-team_squad') as "team_name" FROM team
+
+mappingId	football-player
+target		football:player/{id_player} a :FootballAssociate ; :hasName {name}^^xsd:string . 
+source		SELECT 'p' || id_player as id_player, name from player
+
+mappingId	football-match
+target		football:game/{id_match} a :Game ; :hasHomeParticipant football:club/{id_home}/team/first-team_squad ; :hasAwayParticipant football:club/{id_away}/team/first-team_squad ; :matchDateTime {date_time}^^xsd:dateTime ; rdfs:label {label_match}^^xsd:string . 
+source		SELECT 'g' || id_match as id_match, 'c' || id_home as "id_home", 'c' || id_away as "id_away", to_char(date_time, 'YYYY-MM-DDThh:mm:ssZ') as "date_time", concat(
+			b.club || ' vs. ' || c.club) as "label_match"
+			FROM match a
+			left join team b
+			on (a.id_home = b.id_team)
+			left join team c
+			on (a.id_away = c.id_team)
+
+mappingId	football-contract
+target		football:contract/{contract_id} a :AssociationContract ; :forSeason football:season/{season} ; :hasAssociation football:club/{id_club} ; :hasRole football:position/{position} ; :hasAssociate football:player/{id_player} . football:position/{position} a :Role ; :hasName {position}^^xsd:string . football:season/{season} a :Season ; :hasName {season} . 
+source		Select md5(chr(a.id_player) || chr(a.id_team) || a.transfer_period || a.season) as "contract_id", 'p' || a.id_player as "id_player", b.name, 'c' || a.id_team as "id_club", c.club, a.transfer_period, a.season, a.position, a.year
+			from contract a
+			join player b on (a.id_player = b.id_player)
+			join team c on (a.id_team = c.id_team)
+
+mappingId	football-user
+target		football:user/{id_user} a :User ; :hasName {name}^^xsd:string ; rdfs:label {name}^^xsd:string . football:market/{id_market} a :MatchResult ; :hasUnderlyingGame football:game/{id_match} ; :hasBet football:bet/{id_bet} ; :offeredBy football:bookmaker/{bookmaker_name} ; :marketOfferingDate {marketOfferingDate}^^xsd:dateTime ; :hasQuote1 {hasQuote1}^^xsd:double ; :hasQuoteX {hasQuoteX}^^xsd:double ; :hasQuote2 {hasQuote2}^^xsd:double ; rdfs:label "MatchResultMarket"^^xsd:string . football:bet/{id_bet} a :Bet ; :placedBy football:user/{id_user} ; :betPlaced {bet_placed}^^xsd:dateTime ; :hasTip {tip}^^xsd:string ; rdfs:label {label_bet}^^xsd:string . 
+source		Select *, concat('Bet ' || '(' || 'id:' || id_bet || ')') as "label_bet" from (
+			select md5(concat(c.id_user, b.tip_timestamp, a.id_match, a.betting_provider, a.bet_offered, 'win-draw-win')) as "id_bet",  a.bet_offered as "marketOfferingDate", 'g' || a.id_match as "id_match", a.home_win_odds as "hasQuote1", a.draw_odds as "hasQuoteX", a.away_win_odds as "hasQuote2", a.betting_provider as "bookmaker_name", c.id_user, c.name,  b.tip,  b.tip_timestamp as "bet_placed", md5(concat(a.id_match, a.betting_provider, a.bet_offered, 'win-draw-win')) as id_market, 'win-draw-win' as "marketType"
+			from bet a
+			left join user_bet b
+			on (a.id_bet = b.id_bet)
+			left join platform_user c
+			on (b.id_user = c.id_user)) a
+]]
+
