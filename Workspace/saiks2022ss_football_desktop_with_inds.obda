@@ -8,6 +8,7 @@ xsd:		http://www.w3.org/2001/XMLSchema#
 foaf:		http://xmlns.com/foaf/0.1/
 obda:		https://w3id.org/obda/vocabulary#
 rdfs:		http://www.w3.org/2000/01/rdf-schema#
+terms:		http://purl.org/dc/terms/
 football:	http://www.semanticweb.org/saiks2022/football/instances/
 
 [MappingDeclaration] @collection [[

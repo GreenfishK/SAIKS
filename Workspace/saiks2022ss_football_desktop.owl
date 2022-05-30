@@ -1,6 +1,5 @@
 @prefix : <http://www.semanticweb.org/saiks2022/football/ontology#> .
 @prefix ex: <http://example.org/> .
-@prefix terms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
@@ -8,11 +7,12 @@
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix obda: <https://w3id.org/obda/vocabulary#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix terms: <http://purl.org/dc/terms/> .
 @prefix football: <http://www.semanticweb.org/saiks2022/football/instances/> .
 @base <http://www.semanticweb.org/saiks2022/football/ontology> .
 
 <http://www.semanticweb.org/saiks2022/football/ontology> rdf:type owl:Ontology ;
-                                                         terms:license <https://creativecommons.org/licenses/by-nc-sa/4.0/> .
+                                                          terms:license <https://creativecommons.org/licenses/by-nc-sa/4.0/> .
 
 #################################################################
 #    Annotation properties
@@ -624,9 +624,7 @@ terms:license rdf:type owl:AnnotationProperty .
                           owl:onDataRange xsd:string
                         ] ;
         owl:disjointUnionOf ( :Association
-                              :Bookmaker
                               :FootballAssociate
-                              :Sponsor
                               :User
                             ) ;
         rdfs:comment "Can be a natural or a legal person" ;
@@ -799,7 +797,6 @@ terms:license rdf:type owl:AnnotationProperty .
 #################################################################
 #    Annotations
 #################################################################
-
 
 owl:Thing rdfs:comment """Questions:
 Use IDs from tables in knowledge graphs or rather named entities?""" .

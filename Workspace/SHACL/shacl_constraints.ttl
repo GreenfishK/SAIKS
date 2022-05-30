@@ -40,15 +40,38 @@ fb:QuotesConstraint a sh:NodeShape ;
 	] ;
 .
 
-
 fb:TipConstraint a sh:NodeShape ;
 	sh:targetClass fb:Bet;
-	sh:property [
-		sh:path fb:hasTip;
-		sh:pattern "A|H|D";
-		sh:datatype xsd:string;
-		sh:message "A Tip can only be H, A, or D" ;
-	];
+	sh:or (
+		[sh:and (	[
+	      		sh:property [
+					sh:path fb:placeOn;
+					sh:class fb:MatchResult;
+				] ;
+			]
+	 		[
+	      		sh:property [
+					sh:path fb:hasTip;
+					sh:pattern "A|H|D";
+				] ;
+			]
+
+		)]
+		[sh:and (	[
+	      		sh:property [
+					sh:path fb:placeOn;
+					sh:not [sh:class fb:MatchResult];
+				] ;
+			]
+	 		[
+	      		sh:property [
+					sh:path fb:hasTip;
+					sh:pattern ".*";
+				] ;
+			]
+
+		)]
+	)
 .
 
 fb:AssociationContractConstraint a sh:NodeShape;
