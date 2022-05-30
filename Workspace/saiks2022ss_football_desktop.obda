@@ -23,7 +23,7 @@ mappingId	football-match
 target		football:game/{id_match} a :Game ; :hasHomeParticipant football:club/{id_home}/team/first-team_squad ; :hasAwayParticipant football:club/{id_away}/team/first-team_squad ; :matchDateTime {date_time}^^xsd:dateTime ; rdfs:label {label_match}^^xsd:string . 
 source		SELECT 'g' || id_match as id_match, 'c' || id_home as "id_home", 'c' || id_away as "id_away", to_char(date_time, 'YYYY-MM-DDThh:mm:ssZ') as "date_time", concat(
 			b.club || ' vs. ' || c.club) as "label_match"
-			FROM match a 
+			FROM match a
 			left join team b
 			on (a.id_home = b.id_team)
 			left join team c
@@ -40,7 +40,7 @@ mappingId	football-user
 target		football:user/{id_user} a :User ; :hasName {name}^^xsd:string ; rdfs:label {name}^^xsd:string . football:market/{id_market} a :MatchResult ; :hasUnderlyingGame football:game/{id_match} ; :hasBet football:bet/{id_bet} ; :offeredBy football:bookmaker/{bookmaker_name} ; :marketOfferingDate {marketOfferingDate}^^xsd:dateTime ; :hasQuote1 {hasQuote1}^^xsd:double ; :hasQuoteX {hasQuoteX}^^xsd:double ; :hasQuote2 {hasQuote2}^^xsd:double ; rdfs:label "MatchResultMarket"^^xsd:string . football:bet/{id_bet} a :Bet ; :placedBy football:user/{id_user} ; :betPlaced {bet_placed}^^xsd:dateTime ; :hasTip {tip}^^xsd:string ; rdfs:label {label_bet}^^xsd:string . 
 source		Select *, concat('Bet ' || '(' || 'id:' || id_bet || ')') as "label_bet" from (
 			select md5(concat(c.id_user, b.tip_timestamp, a.id_match, a.betting_provider, a.bet_offered, 'win-draw-win')) as "id_bet",  a.bet_offered as "marketOfferingDate", 'g' || a.id_match as "id_match", a.home_win_odds as "hasQuote1", a.draw_odds as "hasQuoteX", a.away_win_odds as "hasQuote2", a.betting_provider as "bookmaker_name", c.id_user, c.name,  b.tip,  b.tip_timestamp as "bet_placed", md5(concat(a.id_match, a.betting_provider, a.bet_offered, 'win-draw-win')) as id_market, 'win-draw-win' as "marketType"
-			from bet a 
+			from bet a
 			left join user_bet b
 			on (a.id_bet = b.id_bet)
 			left join platform_user c

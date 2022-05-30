@@ -1,0 +1,15 @@
+1. if we leave out the Domains field for a data property the pitfall scanner OOPS will scream. 
+   But we have a property "hasName" multiple times in our ontology. We cannot define 
+   all of them as Domains as the domains are intersected. How do we solve that?
+2. can we replace hasName by rdfs:label?
+   Person hasName
+   Association hasName
+   Bookmaker hasName
+   Sponsor hasName
+   Competition hasName
+   Division hasName
+   Nation hasName
+   Role hasName
+   Round hasName
+   Season hasName
+3. Do Entities which have only one property, e.g. hasName make sense?
