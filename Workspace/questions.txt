@@ -1,2 +1,2 @@
 1. OOPS pitfall scanner: equivalent classes not explicitly declared
-2. SHACL: make distinctions in constraint between different entities. E.g. MatchResultMarket and Other Market
+2. SHACL: make distinctions in constraint between different entities. E.g. MatchResultMarket and Other Market (answered/solved)
