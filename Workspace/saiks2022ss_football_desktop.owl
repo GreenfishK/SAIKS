@@ -336,7 +336,7 @@ terms:license rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Association
 :Association rdf:type owl:Class ;
-             rdfs:subClassOf :Person ,
+             rdfs:subClassOf :LegalEntity ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :hasInfrastructure ;
                                owl:someValuesFrom :Infrastructure
@@ -399,7 +399,7 @@ terms:license rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Bookmaker
 :Bookmaker rdf:type owl:Class ;
-           rdfs:subClassOf :Person ,
+           rdfs:subClassOf :LegalEntity ,
                            [ rdf:type owl:Restriction ;
                              owl:onProperty :offers ;
                              owl:someValuesFrom :Market
@@ -491,7 +491,7 @@ terms:license rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#FootballAssociate
 :FootballAssociate rdf:type owl:Class ;
-                   rdfs:subClassOf :Person ;
+                   rdfs:subClassOf :NaturalPerson ;
                    rdfs:label "FootballAssociate"@en .
 
 
@@ -543,6 +543,11 @@ terms:license rdf:type owl:AnnotationProperty .
 :InternationClubCompetition rdf:type owl:Class ;
                             rdfs:subClassOf :ClubCompetition ;
                             rdfs:label "InternationClubCompetition"@en .
+
+
+###  http://www.semanticweb.org/saiks2022/football/ontology#LegalEntity
+:LegalEntity rdf:type owl:Class ;
+             rdfs:subClassOf :Person .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Market
@@ -600,6 +605,14 @@ terms:license rdf:type owl:AnnotationProperty .
         rdfs:label "Nation"@en .
 
 
+###  http://www.semanticweb.org/saiks2022/football/ontology#NaturalPerson
+:NaturalPerson rdf:type owl:Class ;
+               rdfs:subClassOf :Person ;
+               owl:disjointUnionOf ( :FootballAssociate
+                                     :User
+                                   ) .
+
+
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Office
 :Office rdf:type owl:Class ;
         rdfs:subClassOf :Infrastructure ,
@@ -623,9 +636,8 @@ terms:license rdf:type owl:AnnotationProperty .
                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                           owl:onDataRange xsd:string
                         ] ;
-        owl:disjointUnionOf ( :Association
-                              :FootballAssociate
-                              :User
+        owl:disjointUnionOf ( :LegalEntity
+                              :NaturalPerson
                             ) ;
         rdfs:comment "Can be a natural or a legal person" ;
         rdfs:label "Person"@en .
@@ -708,7 +720,7 @@ terms:license rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Sponsor
 :Sponsor rdf:type owl:Class ;
-         rdfs:subClassOf :Person ;
+         rdfs:subClassOf :LegalEntity ;
          rdfs:label "Sponsor"@en .
 
 
@@ -781,7 +793,7 @@ terms:license rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#User
 :User rdf:type owl:Class ;
-      rdfs:subClassOf :Person ,
+      rdfs:subClassOf :NaturalPerson ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :places ;
                         owl:someValuesFrom :Bet
