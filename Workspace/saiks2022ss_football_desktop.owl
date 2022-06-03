@@ -74,7 +74,6 @@ terms:license rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasGame
 :hasGame rdf:type owl:ObjectProperty ;
-         rdfs:domain :Round ;
          rdfs:range :Game .
 
 
@@ -112,8 +111,7 @@ terms:license rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasRound
 :hasRound rdf:type owl:ObjectProperty ;
           owl:inverseOf :isRoundOf ;
-          rdfs:domain :Division ;
-          rdfs:range :Round .
+          rdfs:domain :Division .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasSponsor
@@ -146,7 +144,6 @@ terms:license rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#isRoundOf
 :isRoundOf rdf:type owl:ObjectProperty ;
-           rdfs:domain :Round ;
            rdfs:range :Division .
 
 
@@ -257,16 +254,6 @@ terms:license rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasName
 :hasName rdf:type owl:DatatypeProperty ;
-         rdfs:domain [ rdf:type owl:Class ;
-                       owl:unionOf ( :Competition
-                                     :Division
-                                     :Nation
-                                     :Person
-                                     :Role
-                                     :Round
-                                     :Season
-                                   )
-                     ] ;
          rdfs:range xsd:string .
 
 
@@ -298,6 +285,12 @@ terms:license rdf:type owl:AnnotationProperty .
 :hasResult rdf:type owl:DatatypeProperty ;
            rdfs:domain :Game ;
            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/saiks2022/football/ontology#hasRound
+:hasRound rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Game ;
+          rdfs:range xsd:int .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasTip
@@ -466,11 +459,6 @@ terms:license rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Division
 :Division rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty :hasRound ;
-                            owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                            owl:onClass :Round
-                          ] ,
-                          [ rdf:type owl:Restriction ;
                             owl:onProperty :isDivisionOf ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass :Competition
@@ -502,9 +490,19 @@ terms:license rdf:type owl:AnnotationProperty .
                         owl:someValuesFrom :Market
                       ] ,
                       [ rdf:type owl:Restriction ;
+                        owl:onProperty :forSeason ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Season
+                      ] ,
+                      [ rdf:type owl:Restriction ;
                         owl:onProperty :hasAwayParticipant ;
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onClass :Team
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasDivision ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Division
                       ] ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :hasHomeParticipant ;
@@ -520,6 +518,11 @@ terms:license rdf:type owl:AnnotationProperty .
                         owl:onProperty :hasResult ;
                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                         owl:onDataRange xsd:string
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasRound ;
+                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onDataRange xsd:int
                       ] ,
                       [ rdf:type owl:Restriction ;
                         owl:onProperty :matchDateTime ;
@@ -675,26 +678,6 @@ terms:license rdf:type owl:AnnotationProperty .
       rdfs:label "Role"@en .
 
 
-###  http://www.semanticweb.org/saiks2022/football/ontology#Round
-:Round rdf:type owl:Class ;
-       rdfs:subClassOf [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasGame ;
-                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                         owl:onClass :Game
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :isRoundOf ;
-                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                         owl:onClass :Division
-                       ] ,
-                       [ rdf:type owl:Restriction ;
-                         owl:onProperty :hasName ;
-                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                         owl:onDataRange xsd:string
-                       ] ;
-       rdfs:label "Round"@en .
-
-
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Season
 :Season rdf:type owl:Class ;
         rdfs:subClassOf [ rdf:type owl:Restriction ;
@@ -805,13 +788,3 @@ terms:license rdf:type owl:AnnotationProperty .
                       ] ;
       rdfs:label "User"@en .
 
-
-#################################################################
-#    Annotations
-#################################################################
-
-owl:Thing rdfs:comment """Questions:
-Use IDs from tables in knowledge graphs or rather named entities?""" .
-
-
-###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
