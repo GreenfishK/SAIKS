@@ -1,0 +1,593 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY foaf "http://xmlns.com/foaf/0.1/" >
+    <!ENTITY dbpedia-owl "http://dbpedia.org/ontology/" >
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY soccer "http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/assignment2/ontologies/2013/10/soccer#"
+     xml:base="http://www.semanticweb.org/assignment2/ontologies/2013/10/soccer"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:dbpedia-owl="http://dbpedia.org/ontology/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:soccer="http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/nandan/ontologies/2013/10/soccer"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/managerClub -->
+
+    <owl:ObjectProperty rdf:about="&dbpedia-owl;managerClub">
+        <rdf:type rdf:resource="&owl;InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/club -->
+
+    <owl:ObjectProperty rdf:about="&soccer;club"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/nationalTeam -->
+
+    <owl:ObjectProperty rdf:about="&soccer;nationalTeam"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/player -->
+
+    <owl:ObjectProperty rdf:about="&soccer;player"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/ground -->
+
+    <owl:DatatypeProperty rdf:about="&dbpedia-owl;ground"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/confederation -->
+
+    <owl:DatatypeProperty rdf:about="&soccer;confederation"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/founded -->
+
+    <owl:DatatypeProperty rdf:about="&soccer;founded"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/hostCountry -->
+
+    <owl:DatatypeProperty rdf:about="&soccer;hostCountry"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/position -->
+
+    <owl:DatatypeProperty rdf:about="&soccer;position"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/season -->
+
+    <owl:DatatypeProperty rdf:about="&soccer;season"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/year -->
+
+    <owl:DatatypeProperty rdf:about="&soccer;year"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/age -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;age"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/name -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;name"/>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/nationality -->
+
+    <owl:DatatypeProperty rdf:about="&foaf;nationality"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/NationalSoccerClub -->
+
+    <owl:Class rdf:about="&dbpedia-owl;NationalSoccerClub"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerClub -->
+
+    <owl:Class rdf:about="&dbpedia-owl;SoccerClub"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerPlayer -->
+
+    <owl:Class rdf:about="&dbpedia-owl;SoccerPlayer">
+        <rdfs:subClassOf rdf:resource="&foaf;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/SoccerTournament -->
+
+    <owl:Class rdf:about="&dbpedia-owl;SoccerTournament"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/InternationalTournament -->
+
+    <owl:Class rdf:about="&soccer;InternationalTournament">
+        <rdfs:subClassOf rdf:resource="&dbpedia-owl;SoccerTournament"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/LeagueTournament -->
+
+    <owl:Class rdf:about="&soccer;LeagueTournament">
+        <rdfs:subClassOf rdf:resource="&dbpedia-owl;SoccerTournament"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/SoccerManager -->
+
+    <owl:Class rdf:about="&soccer;SoccerManager">
+        <rdfs:subClassOf rdf:resource="&foaf;Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/Person -->
+
+    <owl:Class rdf:about="&foaf;Person"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/alex-ferguson -->
+
+    <owl:NamedIndividual rdf:about="&soccer;alex-ferguson">
+        <rdf:type rdf:resource="&soccer;SoccerManager"/>
+        <rdfs:label>Sir Alexander Chapman &quot;Alex&quot; Ferguson</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">71</foaf:age>
+        <foaf:name>Sir Alexander Chapman &quot;Alex&quot; Ferguson</foaf:name>
+        <foaf:nationality>Scotland</foaf:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/arsenal -->
+
+    <owl:NamedIndividual rdf:about="&soccer;arsenal">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerClub"/>
+        <rdfs:label>Arsenal F.C.</rdfs:label>
+        <dbpedia-owl:ground>Emirates</dbpedia-owl:ground>
+        <dbpedia-owl:managerClub rdf:resource="&soccer;arsene-wenger"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/arsene-wenger -->
+
+    <owl:NamedIndividual rdf:about="&soccer;arsene-wenger">
+        <rdf:type rdf:resource="&soccer;SoccerManager"/>
+        <rdfs:label>Arsene Wenger</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">64</foaf:age>
+        <foaf:nationality>France</foaf:nationality>
+        <foaf:name>Arsene Wenger</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/brian-kidd -->
+
+    <owl:NamedIndividual rdf:about="&soccer;brian-kidd">
+        <rdf:type rdf:resource="&soccer;SoccerManager"/>
+        <rdfs:label>Brian Kidd</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">64</foaf:age>
+        <foaf:nationality>England</foaf:nationality>
+        <foaf:name>Brian Kidd</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/cesare-prandelli -->
+
+    <owl:NamedIndividual rdf:about="&soccer;cesare-prandelli">
+        <rdf:type rdf:resource="&soccer;SoccerManager"/>
+        <rdfs:label>Cesare Prandelli</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">56</foaf:age>
+        <foaf:name>Cesare Prandelli</foaf:name>
+        <foaf:nationality>Italy</foaf:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/chelsea -->
+
+    <owl:NamedIndividual rdf:about="&soccer;chelsea">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerClub"/>
+        <rdfs:label>Chelsea F.C.</rdfs:label>
+        <dbpedia-owl:ground>Stamford Bridge</dbpedia-owl:ground>
+        <dbpedia-owl:managerClub rdf:resource="&soccer;rafael-benitez"/>
+        <dbpedia-owl:managerClub rdf:resource="&soccer;roberto-di-matteo"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/david-de-gea -->
+
+    <owl:NamedIndividual rdf:about="&soccer;david-de-gea">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>David de Gea</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">23</foaf:age>
+        <foaf:name>David de Gea</foaf:name>
+        <soccer:position>Goalkeeper</soccer:position>
+        <foaf:nationality>Spain</foaf:nationality>
+        <soccer:club rdf:resource="&soccer;manchester-united"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/david-silva -->
+
+    <owl:NamedIndividual rdf:about="&soccer;david-silva">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>David Silva</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">27</foaf:age>
+        <foaf:nationality>Spain</foaf:nationality>
+        <foaf:name>David Silva</foaf:name>
+        <soccer:position>Midfielder</soccer:position>
+        <soccer:club rdf:resource="&soccer;manchester-city"/>
+        <soccer:nationalTeam rdf:resource="&soccer;spain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/fernando-torres -->
+
+    <owl:NamedIndividual rdf:about="&soccer;fernando-torres">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Fernando Torres</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">29</foaf:age>
+        <foaf:name>Fernando Torres</foaf:name>
+        <soccer:position>Forward</soccer:position>
+        <foaf:nationality>Spain</foaf:nationality>
+        <soccer:club rdf:resource="&soccer;chelsea"/>
+        <soccer:nationalTeam rdf:resource="&soccer;spain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/italy -->
+
+    <owl:NamedIndividual rdf:about="&soccer;italy">
+        <rdf:type rdf:resource="&dbpedia-owl;NationalSoccerClub"/>
+        <rdfs:label>Italy</rdfs:label>
+        <soccer:confederation>UEFA</soccer:confederation>
+        <dbpedia-owl:managerClub rdf:resource="&soccer;cesare-prandelli"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/joe-hart -->
+
+    <owl:NamedIndividual rdf:about="&soccer;joe-hart">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Joe Hart</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">26</foaf:age>
+        <foaf:name>Joe Hart</foaf:name>
+        <soccer:position>Goalkeeper</soccer:position>
+        <foaf:nationality>England</foaf:nationality>
+        <soccer:club rdf:resource="&soccer;manchester-city"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/juan-manuel-mata -->
+
+    <owl:NamedIndividual rdf:about="&soccer;juan-manuel-mata">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Juan Manuel Mata Garcia</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">25</foaf:age>
+        <foaf:name>Juan Manuel Mata Garcia</foaf:name>
+        <foaf:nationality>Spain</foaf:nationality>
+        <soccer:position>Midfielder</soccer:position>
+        <soccer:club rdf:resource="&soccer;chelsea"/>
+        <soccer:nationalTeam rdf:resource="&soccer;spain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/manchester-city -->
+
+    <owl:NamedIndividual rdf:about="&soccer;manchester-city">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerClub"/>
+        <rdfs:label>Manchester City F.C.</rdfs:label>
+        <dbpedia-owl:ground>Etihad</dbpedia-owl:ground>
+        <dbpedia-owl:managerClub rdf:resource="&soccer;brian-kidd"/>
+        <dbpedia-owl:managerClub rdf:resource="&soccer;roberto-mancini"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/manchester-united -->
+
+    <owl:NamedIndividual rdf:about="&soccer;manchester-united">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerClub"/>
+        <rdfs:label>Manchester United F.C.</rdfs:label>
+        <dbpedia-owl:managerClub rdf:resource="&soccer;alex-ferguson"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/mario-balotelli -->
+
+    <owl:NamedIndividual rdf:about="&soccer;mario-balotelli">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Mario Balotelli</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">23</foaf:age>
+        <foaf:name>Mario Balotelli</foaf:name>
+        <foaf:nationality>Italy,Ghana</foaf:nationality>
+        <soccer:position>Forward</soccer:position>
+        <soccer:nationalTeam rdf:resource="&soccer;italy"/>
+        <soccer:club rdf:resource="&soccer;manchester-city"/>
+    </owl:NamedIndividual>
+    
+	 <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/olivier-giroud -->
+
+    <owl:NamedIndividual rdf:about="&soccer;olivier-giroud">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Olivier Giroud</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">27</foaf:age>
+        <foaf:name>Olivier Giroud</foaf:name>
+        <foaf:nationality>France</foaf:nationality>
+        <soccer:position>Forward</soccer:position>
+        <soccer:club rdf:resource="&soccer;arsenal"/>
+    </owl:NamedIndividual>
+	
+	 <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/wayne-rooney -->
+
+    <owl:NamedIndividual rdf:about="&soccer;wayne-rooney">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Wayne Mark Rooney</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">28</foaf:age>
+        <foaf:name>Wayne Mark Rooney</foaf:name>
+        <foaf:nationality>England,Rep. of Ireland</foaf:nationality>
+        <soccer:position>Forward</soccer:position>
+        <soccer:club rdf:resource="&soccer;manchester-united"/>
+    </owl:NamedIndividual>
+	
+ <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/chicharito-hernandez -->
+
+    <owl:NamedIndividual rdf:about="&soccer;chicharito-hernandez">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Javier Hernandez Balcazar</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">25</foaf:age>
+        <foaf:name>Javier Hernandez Balcazar</foaf:name>
+        <foaf:nationality>Mexico</foaf:nationality>
+        <soccer:position>Forward</soccer:position>
+        <soccer:club rdf:resource="&soccer;manchester-united"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/petr-cech -->
+
+    <owl:NamedIndividual rdf:about="&soccer;petr-cech">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Petr Cech</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">31</foaf:age>
+        <foaf:name>Petr Cech</foaf:name>
+        <soccer:position>Goalkeeper</soccer:position>
+        <foaf:nationality>Czech Rep.</foaf:nationality>
+        <soccer:club rdf:resource="&soccer;chelsea"/>
+    </owl:NamedIndividual>
+    
+	<!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/gianluigi-buffon -->
+
+    <owl:NamedIndividual rdf:about="&soccer;gianluigi-buffon">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Gianluigi Buffon</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">35</foaf:age>
+        <foaf:name>Gianluigi Buffon</foaf:name>
+        <soccer:position>Goalkeeper</soccer:position>
+        <foaf:nationality>Italy</foaf:nationality>
+        <soccer:nationalTeam rdf:resource="&soccer;italy"/>
+    </owl:NamedIndividual>
+
+	<!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/iker-casillas -->
+
+    <owl:NamedIndividual rdf:about="&soccer;iker-casillas">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Iker Casillas Fernandez</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">32</foaf:age>
+        <foaf:name>Iker Casillas Fernandez</foaf:name>
+        <soccer:position>Goalkeeper</soccer:position>
+        <foaf:nationality>Spain</foaf:nationality>
+        <soccer:nationalTeam rdf:resource="&soccer;spain"/>
+    </owl:NamedIndividual>
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/premier-league -->
+
+    <owl:NamedIndividual rdf:about="&soccer;premier-league">
+        <rdf:type rdf:resource="&soccer;LeagueTournament"/>
+        <rdfs:label>English Premier League</rdfs:label>
+        <soccer:season>2012-13</soccer:season>
+        <soccer:hostCountry>England</soccer:hostCountry>
+        <soccer:club rdf:resource="&soccer;arsenal"/>
+        <soccer:club rdf:resource="&soccer;chelsea"/>
+        <soccer:club rdf:resource="&soccer;manchester-city"/>
+        <soccer:club rdf:resource="&soccer;manchester-united"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/rafael-benitez -->
+
+    <owl:NamedIndividual rdf:about="&soccer;rafael-benitez">
+        <rdf:type rdf:resource="&soccer;SoccerManager"/>
+        <rdfs:label>Rafael Benitez Maudes </rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">53</foaf:age>
+        <foaf:nationality>Spain</foaf:nationality>
+        <foaf:name>Rafael Benitez Maudes </foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/roberto-di-matteo -->
+
+    <owl:NamedIndividual rdf:about="&soccer;roberto-di-matteo">
+        <rdf:type rdf:resource="&soccer;SoccerManager"/>
+        <rdfs:label>Roberto Di Matteo</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">43</foaf:age>
+        <foaf:nationality>Italy,Switzerland</foaf:nationality>
+        <foaf:name>Roberto Di Matteo</foaf:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/roberto-mancini -->
+
+    <owl:NamedIndividual rdf:about="&soccer;roberto-mancini">
+        <rdf:type rdf:resource="&soccer;SoccerManager"/>
+        <rdfs:label>Roberto Mancini</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">49</foaf:age>
+        <foaf:name>Roberto Mancini</foaf:name>
+        <foaf:nationality>Italy</foaf:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/santi-cazorla -->
+
+    <owl:NamedIndividual rdf:about="&soccer;santi-cazorla">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Santi Cazorla</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">28</foaf:age>
+        <soccer:position>Midfielder</soccer:position>
+        <foaf:nationality>Spain</foaf:nationality>
+        <foaf:name>Santi Cazorla</foaf:name>
+        <soccer:club rdf:resource="&soccer;arsenal"/>
+        <soccer:nationalTeam rdf:resource="&soccer;spain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/spain -->
+
+    <owl:NamedIndividual rdf:about="&soccer;spain">
+        <rdf:type rdf:resource="&dbpedia-owl;NationalSoccerClub"/>
+        <rdfs:label>Spain</rdfs:label>
+        <soccer:confederation>UEFA</soccer:confederation>
+        <dbpedia-owl:managerClub rdf:resource="&soccer;vicente-del-bosque"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/uefa-euro -->
+
+    <owl:NamedIndividual rdf:about="&soccer;uefa-euro">
+        <rdf:type rdf:resource="&soccer;InternationalTournament"/>
+        <rdfs:label>UEFA Euro 2012</rdfs:label>
+        <soccer:hostCountry>Poland,Ukraine</soccer:hostCountry>
+        <soccer:year>2012</soccer:year>
+        <soccer:nationalTeam rdf:resource="&soccer;italy"/>
+        <soccer:nationalTeam rdf:resource="&soccer;spain"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/vicente-del-bosque -->
+
+    <owl:NamedIndividual rdf:about="&soccer;vicente-del-bosque">
+        <rdf:type rdf:resource="&soccer;SoccerManager"/>
+        <rdfs:label>Vicente del Bosque</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">62</foaf:age>
+        <foaf:name>Vicente del Bosque</foaf:name>
+        <foaf:nationality>Spain</foaf:nationality>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/nandan/ontologies/2013/10/soccer/wojciech-szczesny -->
+
+    <owl:NamedIndividual rdf:about="&soccer;wojciech-szczesny">
+        <rdf:type rdf:resource="&dbpedia-owl;SoccerPlayer"/>
+        <rdfs:label>Wojciech Szczesny</rdfs:label>
+        <foaf:age rdf:datatype="&xsd;integer">23</foaf:age>
+        <foaf:nationality>Poland</foaf:nationality>
+        <foaf:name>Wojciech Szczesny</foaf:name>
+        <soccer:position>Goalkeeper</soccer:position>
+        <soccer:club rdf:resource="&soccer;arsenal"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
