@@ -1,0 +1,132 @@
+<!-- Classes -->
+<owl:Class rdf:about="#League">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="#Of"/>
+<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="#Round">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="#BelongsTo"/>
+<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="#Match">
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="#UmpiredBy"/>
+<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="#PlayedIn"/>
+<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="#HomeTeam"/>
+<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="#HostTeam"/>
+<owl:someValuesFrom rdf:resource="&owl;Thing"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="#Nation"/>
+<owl:Class rdf:about="#PlayedMatch">
+<rdfs:subClassOf rdf:resource="#Match"/>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="#HostGoals"/>
+<owl:someValuesFrom rdf:resource="&xsd;anyType"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="#PlayedOn"/>
+<owl:someValuesFrom rdf:resource="&xsd;anyType"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+<rdfs:subClassOf>
+<owl:Restriction>
+<owl:onProperty rdf:resource="#HomeGoals"/>
+<owl:someValuesFrom rdf:resource="&xsd;anyType"/>
+</owl:Restriction>
+</rdfs:subClassOf>
+</owl:Class>
+<owl:Class rdf:about="#Referee"/>
+<owl:Class rdf:about="#Team"/>
+<!-- Datatypes -->
+<rdfs:Datatype rdf:about="&xsd;anyType">
+<rdf:type rdf:resource="&owl;Thing"/>
+</rdfs:Datatype>
+<rdfs:Datatype rdf:about="&xsd;date">
+<rdf:type rdf:resource="&owl;Thing"/>
+</rdfs:Datatype>
+<rdfs:Datatype rdf:about="&xsd;nonNegativeInteger">
+<rdf:type rdf:resource="&owl;Thing"/>
+</rdfs:Datatype>
+<rdfs:Datatype rdf:about="&xsd;positiveInteger">
+<rdf:type rdf:resource="&owl;Thing"/>
+</rdfs:Datatype>
+<!-- Datatype Properties -->
+<owl:DatatypeProperty rdf:about="#Code">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:about="#HomeGoals">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:about="#HostGoals">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:range rdf:resource="&xsd;nonNegativeInteger"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:about="#PlayedOn">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:range rdf:resource="&xsd;date"/>
+</owl:DatatypeProperty>
+<owl:DatatypeProperty rdf:about="#Year">
+<rdf:type rdf:resource="&owl;FunctionalProperty"/>
+<rdfs:range rdf:resource="&xsd;positiveInteger"/>
+</owl:DatatypeProperty>
+<!-- Object Properties -->
+<owl:FunctionalProperty rdf:about="#BelongsTo">
+<rdf:type rdf:resource="&owl;ObjectProperty"/>
+<rdfs:domain rdf:resource="#Round"/>
+<rdfs:range rdf:resource="#League"/>
+</owl:FunctionalProperty>
+<owl:FunctionalProperty rdf:about="#HomeTeam">
+<rdf:type rdf:resource="&owl;ObjectProperty"/>
+<rdfs:domain rdf:resource="#Match"/>
+<rdfs:range rdf:resource="#Team"/>
+</owl:FunctionalProperty>
+<owl:FunctionalProperty rdf:about="#HostTeam">
+<rdf:type rdf:resource="&owl;ObjectProperty"/>
+<rdfs:domain rdf:resource="#Match"/>
+<rdfs:range rdf:resource="#Team"/>
+</owl:FunctionalProperty>
+<owl:FunctionalProperty rdf:about="#Of">
+<rdf:type rdf:resource="&owl;ObjectProperty"/>
+<rdfs:domain rdf:resource="#League"/>
+<rdfs:range rdf:resource="#Nation"/>
+</owl:FunctionalProperty>
+<owl:FunctionalProperty rdf:about="#PlayedIn">
+<rdf:type rdf:resource="&owl;ObjectProperty"/>
+<rdfs:domain rdf:resource="#Match"/>
+<rdfs:range rdf:resource="#Round"/>
+</owl:FunctionalProperty>
+<owl:FunctionalProperty rdf:about="#UmpiredBy">
+<rdf:type rdf:resource="&owl;ObjectProperty"/>
+<rdfs:domain rdf:resource="#Match"/>
+<rdfs:range rdf:resource="#Referee"/>
+</owl:FunctionalProperty>

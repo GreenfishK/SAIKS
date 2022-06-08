@@ -1,0 +1,6 @@
+ontology within paper: 
+    https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5556663
+    researchgate.net/publication/221140988_A_Semantic_Framework_for_Personalized_Ad_Recommendation_based_on_Advanced_Textual_Analysis
+    https://www.diag.uniroma1.it/~degiacom/papers/2007/calv-etal-OWLED-2007.pdf
+
+
