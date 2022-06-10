@@ -68,7 +68,7 @@ terms:license rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasDivision
 :hasDivision rdf:type owl:ObjectProperty ;
              owl:inverseOf :isDivisionOf ;
-             rdfs:domain :Competition ;
+             rdfs:domain :Game ;
              rdfs:range :Division .
 
 
