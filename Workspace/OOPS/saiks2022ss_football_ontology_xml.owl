@@ -105,18 +105,8 @@
     <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasDivision -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasDivision">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Competition"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasGame -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasGame">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Round"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
     </owl:ObjectProperty>
     
 
@@ -149,6 +139,16 @@
     
 
 
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasPart -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasPart">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Competition"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasParticipant -->
 
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasParticipant">
@@ -163,16 +163,6 @@
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasRole">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Contract"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Role"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasRound -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasRound">
-        <owl:inverseOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isRoundOf"/>
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Round"/>
     </owl:ObjectProperty>
     
 
@@ -208,20 +198,11 @@
     
 
 
-    <!-- http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf -->
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#isPartOf -->
 
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf">
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#isPartOf">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Competition"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/saiks2022/football/ontology#isRoundOf -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#isRoundOf">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Round"/>
-        <rdfs:range rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
     </owl:ObjectProperty>
     
 
@@ -397,8 +378,9 @@
                     <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Nation"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Role"/>
-                    <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Round"/>
                     <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Season"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Stadium"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
                 </owl:unionOf>
             </owl:Class>
         </rdfs:domain>
@@ -448,6 +430,15 @@
     <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasResult">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#hasRound -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#hasRound">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
     </owl:DatatypeProperty>
     
 
@@ -511,7 +502,7 @@
     <!-- http://www.semanticweb.org/saiks2022/football/ontology#Association -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Association">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#LegalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasInfrastructure"/>
@@ -602,7 +593,7 @@
     <!-- http://www.semanticweb.org/saiks2022/football/ontology#Bookmaker -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Bookmaker">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#LegalEntity"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#offers"/>
@@ -648,9 +639,8 @@
     <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Competition">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasDivision"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -700,14 +690,7 @@
     <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Division">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasRound"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Round"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf"/>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isPartOf"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Competition"/>
             </owl:Restriction>
@@ -719,7 +702,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">Divison</rdfs:label>
+        <rdfs:label>Division</rdfs:label>
     </owl:Class>
     
 
@@ -736,7 +719,7 @@
     <!-- http://www.semanticweb.org/saiks2022/football/ontology#FootballAssociate -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#FootballAssociate">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#NaturalPerson"/>
         <rdfs:label xml:lang="en">FootballAssociate</rdfs:label>
     </owl:Class>
     
@@ -753,9 +736,23 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#forSeason"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Season"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasAwayParticipant"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasDivision"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -777,6 +774,13 @@
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasResult"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasRound"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -811,6 +815,14 @@
     <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#InternationClubCompetition">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#ClubCompetition"/>
         <rdfs:label xml:lang="en">InternationClubCompetition</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#LegalEntity -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#LegalEntity">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
     </owl:Class>
     
 
@@ -895,6 +907,18 @@
     
 
 
+    <!-- http://www.semanticweb.org/saiks2022/football/ontology#NaturalPerson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#NaturalPerson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#FootballAssociate"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#User"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.semanticweb.org/saiks2022/football/ontology#Office -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Office">
@@ -929,11 +953,8 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <owl:disjointUnionOf rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Association"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Bookmaker"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#FootballAssociate"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Sponsor"/>
-            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#User"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#LegalEntity"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#NaturalPerson"/>
         </owl:disjointUnionOf>
         <rdfs:comment>Can be a natural or a legal person</rdfs:comment>
         <rdfs:label xml:lang="en">Person</rdfs:label>
@@ -988,35 +1009,6 @@
     
 
 
-    <!-- http://www.semanticweb.org/saiks2022/football/ontology#Round -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Round">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasGame"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Game"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#isRoundOf"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onClass rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Division"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#hasName"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">Round</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://www.semanticweb.org/saiks2022/football/ontology#Season -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Season">
@@ -1054,7 +1046,7 @@
     <!-- http://www.semanticweb.org/saiks2022/football/ontology#Sponsor -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#Sponsor">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#LegalEntity"/>
         <rdfs:label xml:lang="en">Sponsor</rdfs:label>
     </owl:Class>
     
@@ -1160,7 +1152,7 @@
     <!-- http://www.semanticweb.org/saiks2022/football/ontology#User -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/saiks2022/football/ontology#User">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Person"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#NaturalPerson"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#places"/>
@@ -1176,21 +1168,6 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">User</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#Thing">
-        <rdfs:comment>Questions:
-Use IDs from tables in knowledge graphs or rather named entities?</rdfs:comment>
-    </rdf:Description>
 </rdf:RDF>
 
 

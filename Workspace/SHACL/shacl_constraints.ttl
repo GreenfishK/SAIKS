@@ -114,7 +114,7 @@ fb:NationConstraint a sh:NodeShape ;
 				sh:datatype xsd:string ;
 			]
 			[
-				sh:class fb:Address ;
+				sh:class fb:Nation ;
 			]
 		);
 		sh:minCount 1;
