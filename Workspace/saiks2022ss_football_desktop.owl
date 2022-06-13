@@ -67,7 +67,6 @@ terms:license rdf:type owl:AnnotationProperty .
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasDivision
 :hasDivision rdf:type owl:ObjectProperty ;
-             owl:inverseOf :isDivisionOf ;
              rdfs:domain :Game ;
              rdfs:range :Division .
 
@@ -89,6 +88,13 @@ terms:license rdf:type owl:AnnotationProperty .
 :hasNation rdf:type owl:ObjectProperty ;
            rdfs:domain :Person ;
            rdfs:range :Nation .
+
+
+###  http://www.semanticweb.org/saiks2022/football/ontology#hasPart
+:hasPart rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isPartOf ;
+         rdfs:domain :Competition ;
+         rdfs:range :Division .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#hasParticipant
@@ -125,10 +131,10 @@ terms:license rdf:type owl:AnnotationProperty .
                    rdfs:range :Game .
 
 
-###  http://www.semanticweb.org/saiks2022/football/ontology#isDivisionOf
-:isDivisionOf rdf:type owl:ObjectProperty ;
-              rdfs:domain :Division ;
-              rdfs:range :Competition .
+###  http://www.semanticweb.org/saiks2022/football/ontology#isPartOf
+:isPartOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :Division ;
+          rdfs:range :Competition .
 
 
 ###  http://www.semanticweb.org/saiks2022/football/ontology#isTeamOf
@@ -418,9 +424,8 @@ terms:license rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Competition
 :Competition rdf:type owl:Class ;
              rdfs:subClassOf [ rdf:type owl:Restriction ;
-                               owl:onProperty :hasDivision ;
-                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
-                               owl:onClass :Division
+                               owl:onProperty :hasPart ;
+                               owl:someValuesFrom :Division
                              ] ,
                              [ rdf:type owl:Restriction ;
                                owl:onProperty :hasName ;
@@ -454,7 +459,7 @@ terms:license rdf:type owl:AnnotationProperty .
 ###  http://www.semanticweb.org/saiks2022/football/ontology#Division
 :Division rdf:type owl:Class ;
           rdfs:subClassOf [ rdf:type owl:Restriction ;
-                            owl:onProperty :isDivisionOf ;
+                            owl:onProperty :isPartOf ;
                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
                             owl:onClass :Competition
                           ] ,
