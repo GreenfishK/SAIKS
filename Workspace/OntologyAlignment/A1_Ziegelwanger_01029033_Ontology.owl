@@ -1,0 +1,405 @@
+@prefix : <http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/p014314/ontologies/2021/10/Football> .
+
+<http://www.semanticweb.org/p014314/ontologies/2021/10/Football> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/Football#hasInfrastructure
+:hasInfrastructure rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Team ;
+                   rdfs:range :Infrastructure ;
+                   rdfs:label "Indicates the relation between a team and its infrastructure" ,
+                              "hasInfrastructure" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#hasCoach
+:hasCoach rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Team ;
+          rdfs:range :Coach ;
+          rdfs:comment "Indicates the relation between a team an a coach" ;
+          rdfs:label "hasCoach" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#hasGoalkeeper
+:hasGoalkeeper rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :Team ;
+               rdfs:range :Goalkeeper ;
+               rdfs:comment "Indicates the relation between an goalkeeper and a team" ;
+               rdfs:label "hasGoalkeeper" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#hasMatch
+:hasMatch rdf:type owl:ObjectProperty ;
+          rdfs:domain :Competition ;
+          rdfs:range :Match ;
+          rdfs:comment "Indicates the relation between a competiton and a match" ;
+          rdfs:label "hasMatch" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#hasPlayer
+:hasPlayer rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:domain :Team ;
+           rdfs:range :Player ;
+           rdfs:comment "Indicates the relation between a team and a player" ;
+           rdfs:label "hasPlayer" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#hasReferee
+:hasReferee rdf:type owl:ObjectProperty ;
+            rdfs:domain :Match ;
+            rdfs:range :Referee ;
+            rdfs:comment "Indicates the realtion between a match and a referee" ;
+            rdfs:label "Referee" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#hasStadium
+:hasStadium rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain :Team ;
+            rdfs:range :Stadium ;
+            rdfs:comment "Indicates the relation between a stadium and a team" ;
+            rdfs:label "Stadium" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#hasStaff
+:hasStaff rdf:type owl:ObjectProperty ;
+          rdfs:subPropertyOf owl:topObjectProperty ;
+          rdfs:domain :Team ;
+          rdfs:range :StaffMember ;
+          rdfs:label "Indicates the relation between a team and its staff" ,
+                     "hasStaff" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#hasTeam
+:hasTeam rdf:type owl:ObjectProperty ;
+         rdfs:domain :Match ;
+         rdfs:range :Team ;
+         rdfs:comment "Indicates the relation between a team and a match" ;
+         rdfs:label "hasTeam" .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#address
+:address rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Infrastructure ;
+         rdfs:range xsd:string ;
+         rdfs:comment "the address of a infrastructure" ;
+         rdfs:label "address" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#age
+:age rdf:type owl:DatatypeProperty ;
+     rdfs:domain :Person ;
+     rdfs:range xsd:integer ;
+     rdfs:comment "the age of a person" ;
+     rdfs:label "age" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#founding_date
+:founding_date rdf:type owl:DatatypeProperty ;
+               rdfs:domain :Team ;
+               rdfs:range xsd:dateTime ;
+               rdfs:comment "the founding date of a team" ;
+               rdfs:label "founding_date" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#level
+:level rdf:type owl:DatatypeProperty ;
+       rdfs:domain :Referee ;
+       rdfs:range xsd:integer ;
+       rdfs:comment "the level of a referee" ;
+       rdfs:label "level" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#name
+:name rdf:type owl:DatatypeProperty ;
+      rdfs:domain :Person ;
+      rdfs:range xsd:string ;
+      rdfs:comment "the name of a person" ;
+      rdfs:label "name" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#no_of_desks
+:no_of_desks rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Office ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "the number of desks in an office" ;
+             rdfs:label "no_of_desks" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#no_of_fields
+:no_of_fields rdf:type owl:DatatypeProperty ;
+              rdfs:domain :TrainingCenter ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "the number of fields of a traing center" ;
+              rdfs:label "no_of_fields" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#no_of_seats
+:no_of_seats rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Stadium ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "the number of seats in a stadium" ;
+             rdfs:label "no_of_seats" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#prize_money
+:prize_money rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Competition ;
+             rdfs:range xsd:integer ;
+             rdfs:comment "the prize money of a competition" ;
+             rdfs:label "prize_money" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#result
+:result rdf:type owl:DatatypeProperty ;
+        rdfs:domain :Match ;
+        rdfs:range xsd:string ;
+        rdfs:comment "the result of a match" ;
+        rdfs:label "result" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#scored_goals
+:scored_goals rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Player ;
+              rdfs:range xsd:integer ;
+              rdfs:comment "the number of scored goals of a player" ;
+              rdfs:label "scored_goals" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#staff_id
+:staff_id rdf:type owl:DatatypeProperty ;
+          rdfs:domain :StaffMember ;
+          rdfs:range xsd:string ;
+          rdfs:comment "the staff id of staff member" ;
+          rdfs:label "staff_id" .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Club
+:Club rdf:type owl:Class ;
+      rdfs:subClassOf :Team ;
+      owl:disjointWith :Selection ;
+      rdfs:comment "Indicates the clubs in a match" ;
+      rdfs:label "Club" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Coach
+:Coach rdf:type owl:Class ;
+       rdfs:subClassOf :StaffMember ;
+       rdfs:comment "Indicates the coach of a team" ;
+       rdfs:label "Coach" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Competition
+:Competition rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :hasMatch ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Match
+                             ] ;
+             owl:disjointWith :Infrastructure ,
+                              :Match ,
+                              :Person ,
+                              :Team ;
+             rdfs:comment "Indicates the football competitions" ;
+             rdfs:label "Competition" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Defender
+:Defender rdf:type owl:Class ;
+          rdfs:subClassOf :Player ;
+          rdfs:comment "Indicates the defenders of a team" ;
+          rdfs:label "Defender" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Goalkeeper
+:Goalkeeper rdf:type owl:Class ;
+            rdfs:subClassOf :Player ;
+            rdfs:comment "Indicates the goalkeepers of a team" ;
+            rdfs:label "Goalkeeper" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Infrastructure
+:Infrastructure rdf:type owl:Class ;
+                owl:disjointWith :Match ,
+                                 :Person ,
+                                 :Team ;
+                rdfs:comment "Indicates the infrastructer of a team" ;
+                rdfs:label "Infrastructure" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Manager
+:Manager rdf:type owl:Class ;
+         rdfs:subClassOf :StaffMember ;
+         rdfs:comment "Indicates the managers of a team" ;
+         rdfs:label "Manager" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Match
+:Match rdf:type owl:Class ;
+       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasReferee ;
+                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Referee
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :hasTeam ;
+                         owl:qualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                         owl:onClass :Team
+                       ] ;
+       owl:disjointWith :Person ,
+                        :Team ;
+       rdfs:comment "Indicates the matches of a competition" ;
+       rdfs:label "Match" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Medic
+:Medic rdf:type owl:Class ;
+       rdfs:subClassOf :StaffMember ;
+       rdfs:comment "Indicates the medical staff of a team" ;
+       rdfs:label "Medic" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Midfielder
+:Midfielder rdf:type owl:Class ;
+            rdfs:subClassOf :Player ;
+            rdfs:comment "Indicates the midfielder of a team" ;
+            rdfs:label "Midfielder" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Office
+:Office rdf:type owl:Class ;
+        rdfs:subClassOf :Infrastructure ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :no_of_desks ;
+                          owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ;
+        rdfs:comment "Indicates the offices of a team" ;
+        rdfs:label "Office" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Person
+:Person rdf:type owl:Class ;
+        owl:disjointWith :Team ;
+        rdfs:comment "Indicates the persons involved in football" ;
+        rdfs:label "Person" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Player
+:Player rdf:type owl:Class ;
+        rdfs:subClassOf :Person ,
+                        [ rdf:type owl:Restriction ;
+                          owl:onProperty :age ;
+                          owl:minQualifiedCardinality "16"^^xsd:nonNegativeInteger ;
+                          owl:onDataRange xsd:integer
+                        ] ;
+        rdfs:comment "Indicates the players of a team" ;
+        rdfs:label "Player" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Referee
+:Referee rdf:type owl:Class ;
+         rdfs:subClassOf :Person ;
+         rdfs:comment "Indicates the referee of a match" ;
+         rdfs:label "Referee" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Selection
+:Selection rdf:type owl:Class ;
+           rdfs:subClassOf :Team ;
+           rdfs:comment "Indicates the selections (national teams) in a match" ;
+           rdfs:label "Selection" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Stadium
+:Stadium rdf:type owl:Class ;
+         rdfs:subClassOf :Infrastructure ,
+                         [ rdf:type owl:Restriction ;
+                           owl:onProperty :no_of_seats ;
+                           owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                           owl:onDataRange xsd:integer
+                         ] ;
+         rdfs:comment "Indicates the stadiums of a team" ;
+         rdfs:label "Stadium" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#StaffMember
+:StaffMember rdf:type owl:Class ;
+             rdfs:subClassOf :Person ;
+             rdfs:comment "Indicates the staff members of a team" ;
+             rdfs:label "Staff Member" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Striker
+:Striker rdf:type owl:Class ;
+         rdfs:subClassOf :Player ;
+         rdfs:comment "Indicates the striker of a team" ;
+         rdfs:label "Striker" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Team
+:Team rdf:type owl:Class ;
+      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasInfrastructure ;
+                        owl:someValuesFrom :Infrastructure
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasStaff ;
+                        owl:someValuesFrom :StaffMember
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasCoach ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Coach
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasGoalkeeper ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Goalkeeper
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasPlayer ;
+                        owl:minQualifiedCardinality "11"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Player
+                      ] ,
+                      [ rdf:type owl:Restriction ;
+                        owl:onProperty :hasStadium ;
+                        owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                        owl:onClass :Stadium
+                      ] ;
+      rdfs:comment "Indicates the teams of a match" ;
+      rdfs:label "Team" .
+
+
+###  http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#TrainingCenter
+:TrainingCenter rdf:type owl:Class ;
+                rdfs:subClassOf :Infrastructure ,
+                                [ rdf:type owl:Restriction ;
+                                  owl:onProperty :no_of_fields ;
+                                  owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                  owl:onDataRange xsd:integer
+                                ] ;
+                rdfs:comment "Indicates the Traning Centers of a team" ;
+                rdfs:label "TrainingCenter" .
+
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
