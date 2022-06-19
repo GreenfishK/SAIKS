@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rdf:RDF xmlns='http://knowledgeweb.semanticweb.org/heterogeneity/alignment'
+	 xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#' 
+	 xmlns:xsd='http://www.w3.org/2001/XMLSchema#' 
+	 alignmentSource='AgreementMakerLight'>
+
+<Alignment>
+	<xml>yes</xml>
+	<level>0</level>
+	<type>11</type>
+	<onto1>http://www.semanticweb.org/p014314/ontologies/2021/10/Football</onto1>
+	<onto2>http://www.semanticweb.org/saiks2022/football/ontology</onto2>
+	<uri1>http://www.semanticweb.org/p014314/ontologies/2021/10/Football</uri1>
+	<uri2>http://www.semanticweb.org/saiks2022/football/ontology</uri2>
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#TrainingCenter"/>
+			<entity2 rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#TrainingCenter"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.99</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Office"/>
+			<entity2 rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Office"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.99</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Team"/>
+			<entity2 rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Team"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.99</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Infrastructure"/>
+			<entity2 rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Infrastructure"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.99</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Stadium"/>
+			<entity2 rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Stadium"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.99</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Selection"/>
+			<entity2 rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Selection"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9802</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Competition"/>
+			<entity2 rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Competition"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9801</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+	<map>
+		<Cell>
+			<entity1 rdf:resource="http://www.semanticweb.org/p014314/ontologies/2021/10/untitled-ontology-13#Club"/>
+			<entity2 rdf:resource="http://www.semanticweb.org/saiks2022/football/ontology#Club"/>
+			<measure rdf:datatype="http://www.w3.org/2001/XMLSchema#float">0.9801</measure>
+			<relation>=</relation>
+		</Cell>
+	</map>
+
+</Alignment>
+</rdf:RDF>
